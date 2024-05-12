@@ -1,0 +1,14 @@
+.section {
+  padding-block: 1rem;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}

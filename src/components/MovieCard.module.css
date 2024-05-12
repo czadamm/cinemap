@@ -1,0 +1,35 @@
+.movie {
+  position: relative;
+  height: calc(14rem * 1.5);
+  width: 14rem;
+  background-color: var(--card-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.288);
+}
+
+.favourite {
+  position: absolute;
+  display: flex;
+  top: 6px;
+  right: 6px;
+  height: 2.6rem;
+  width: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.144);
+  border-radius: 50%;
+}
+
+.rating {
+  position: absolute;
+  display: flex;
+  top: 6px;
+  left: 6px;
+  height: 2.6rem;
+  width: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--favourite-color);
+  background-color: rgb(32, 39, 46);
+  border-radius: 50%;
+}

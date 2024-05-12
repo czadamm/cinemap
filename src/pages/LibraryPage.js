@@ -1,5 +1,7 @@
+import classes from "./LibraryPage.module.css";
+
 function LibraryPage() {
-  return <h1>Library</h1>;
+  return <main></main>;
 }
 
 export default LibraryPage;
