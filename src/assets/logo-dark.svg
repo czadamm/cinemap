@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_2" data-name="Warstwa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 223.29 55.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: red;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #2c3e50;
+        font-family: PoiretOne-Regular, 'Poiret One';
+        font-size: 51.34px;
+        letter-spacing: .04em;
+      }
+
+      .cls-2 {
+        fill: url(#Gradient_bez_nazwy_30);
+      }
+    </style>
+    <radialGradient id="Gradient_bez_nazwy_30" data-name="Gradient bez nazwy 30" cx="22.96" cy="26.06" fx="22.96" fy="26.06" r="16.33" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="red"/>
+      <stop offset=".11" stop-color="#ff1717" stop-opacity=".91"/>
+      <stop offset=".33" stop-color="#ff5252" stop-opacity=".68"/>
+      <stop offset=".64" stop-color="#ffb1b1" stop-opacity=".31"/>
+      <stop offset=".89" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="Warstwa_1-2" data-name="Warstwa 1">
+    <g>
+      <text class="cls-3" transform="translate(0 44.93)"><tspan x="0" y="0">CINEMAP</tspan></text>
+      <circle class="cls-2" cx="22.96" cy="26.06" r="16.33"/>
+      <circle class="cls-1" cx="22.96" cy="26.06" r="6.33"/>
+    </g>
+  </g>
+</svg>

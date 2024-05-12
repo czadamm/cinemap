@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  padding-block: 2.2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header img {
+  width: 150px;
+}
+
+.nav_top {
+  display: flex;
+}
+
+.nav_top ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav_top li {
+  padding-inline: 1rem;
+}
+
+.nav_top li:last-of-type {
+  position: relative;
+  padding-inline: 0;
+  padding-left: 1rem;
+}
+
+.nav_top li:last-of-type i {
+  font-size: 1.3rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.nav_top li:last-of-type i:hover {
+  color: var(--primary-color);
+}
+
+.nav_top a {
+  text-decoration: none;
+  color: var(--main-text-color);
+  transition: 0.2s;
+}
+
+.nav_top a:hover,
+.nav_top a.active {
+  color: var(--primary-color);
+}
+
+a.button {
+  padding: 5px 1rem;
+
+  border: 1px solid var(--main-text-color);
+  /* border-radius: 50px; */
+}
+
+a.button:hover {
+  color: var(--main-text-color);
+  background-color: var(--primary-color);
+}
+
+#settings_window {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  padding: 1rem;
+  height: 100px;
+  width: 130px;
+  opacity: 0;
+  color: var(--primary-color);
+  background-color: var(--card-color);
+  border-radius: 4px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.226);
+  transition: 0.3s;
+}
+
+#settings_window::after {
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 3px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 11px solid var(--card-color);
+}
+
+#settings_window.active {
+  display: block;
+  opacity: 1;
+  -webkit-animation: showSettings 0.1s ease-in;
+  animation: showSettings 0.1s ease-in;
+}
+
+@-webkit-keyframes showSettings {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showSettings {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
