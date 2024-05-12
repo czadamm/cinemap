@@ -4,7 +4,7 @@ import { useState } from "react";
 import classes from "./Header.module.css";
 
 import logoLight from "../assets/logo-light.svg";
-import logoDark from "../assets/logo-dark.svg";
+// import logoDark from "../assets/logo-dark.svg";
 
 function Header() {
   const [openSettings, setOpenSettings] = useState(false);
@@ -15,7 +15,7 @@ function Header() {
 
   return (
     <header className={classes.header}>
-      <img src={logoLight} alt="logo" />
+      <img src={logoLight} alt="CINEMAP" />
       <nav className={classes.nav_top}>
         <ul>
           <li>
@@ -28,8 +28,8 @@ function Header() {
             <Link to="news">News</Link>
           </li>
           <li>
-            <Link to="login" className={classes.button}>
-              Log in
+            <Link to="sign-in" className={classes.button}>
+              Sign-in
             </Link>
           </li>
           <li>
@@ -38,6 +38,7 @@ function Header() {
               id={classes.settings_window}
               className={openSettings ? classes.active : undefined}
             >
+              <h2>Settings</h2>
               <p>Theme</p>
               <p>Language</p>
             </div>
