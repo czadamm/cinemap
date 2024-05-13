@@ -6,6 +6,7 @@
   background-color: var(--card-color);
   border-radius: 5px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.288);
+  overflow: hidden;
 }
 
 .background_image {

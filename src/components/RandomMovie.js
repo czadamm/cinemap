@@ -24,7 +24,7 @@ function RandomMovie() {
         </p>
       </div>
       <div className={classes.favourite}>
-        <i class="fa-regular fa-star"></i>
+        <i className="fa-regular fa-star"></i>
       </div>
     </section>
   );

@@ -1,5 +1,11 @@
+import Movies from "../components/Movies";
+
 function LibraryPage() {
-  return <main></main>;
+  return (
+    <main>
+      <Movies categories={[]} />
+    </main>
+  );
 }
 
 export default LibraryPage;

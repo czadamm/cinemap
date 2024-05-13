@@ -1,10 +1,18 @@
 .movie {
   position: relative;
   height: calc(14rem * 1.5);
-  width: 14rem;
+  min-width: 14rem;
   background-color: var(--card-color);
   border-radius: 5px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.288);
+  overflow: hidden;
+}
+
+.movie img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .favourite {
@@ -29,6 +37,7 @@
   width: 2.6rem;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
   color: var(--favourite-color);
   background-color: rgb(32, 39, 46);
   border-radius: 50%;
