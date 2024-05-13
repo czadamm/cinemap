@@ -3,7 +3,7 @@ import "./App.css";
 import RootLayout from "./pages/RootLayout";
 import LibraryPage from "./pages/LibraryPage";
 import HomePage from "./pages/HomePage";
-import NewsPage from "./pages/NewsPage";
+import UpcomingPage from "./pages/UpcomingPage";
 import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "library", element: <LibraryPage /> },
-      { path: "news", element: <NewsPage /> },
+      { path: "upcoming", element: <UpcomingPage /> },
       { path: "sign-in", element: <LoginPage /> },
     ],
   },

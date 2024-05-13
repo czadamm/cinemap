@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  padding-block: 2.2rem;
+  padding-block: 3rem;
   width: 100%;
   justify-content: space-between;
 }
@@ -70,7 +70,7 @@ a.button:hover {
   padding: 1rem;
   width: 130px;
   opacity: 0;
-  color: var(--primary-color);
+  color: var(--main-text-color);
   background-color: var(--card-color);
   border-radius: 4px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.226);

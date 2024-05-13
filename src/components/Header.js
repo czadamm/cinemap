@@ -25,7 +25,7 @@ function Header() {
             <Link to="library">Library</Link>
           </li>
           <li>
-            <Link to="news">News</Link>
+            <Link to="upcoming">Upcoming</Link>
           </li>
           <li>
             <Link to="sign-in" className={classes.button}>
@@ -38,7 +38,6 @@ function Header() {
               id={classes.settings_window}
               className={openSettings ? classes.active : undefined}
             >
-              <h2>Settings</h2>
               <p>Theme</p>
               <p>Language</p>
             </div>
