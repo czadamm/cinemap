@@ -3,7 +3,7 @@ export const PROVIDERS = {
   appleTV: 2,
   disney: 337,
   amazon: 10,
-  hboGO: 384,
+  hboMAX: 384,
 };
 
 export const LANGUAGES = {

@@ -24,6 +24,12 @@ function HomePage() {
         provider={PROVIDERS.disney}
         region={LANGUAGES.pl.region}
       />
+      <RankSection
+        title="Best on HBO MAX"
+        lang={LANGUAGES.pl.lang}
+        provider={PROVIDERS.hboMAX}
+        region={LANGUAGES.pl.region}
+      />
     </main>
   );
 }
