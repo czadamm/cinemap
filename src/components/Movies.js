@@ -3,7 +3,7 @@ import classes from "./Movies.module.css";
 import { fetchingMovies } from "../utils/fetching";
 import Movie from "./MovieCard";
 
-function Movies({ categories, platform, horizontal }) {
+function Movies({ categories, lang, provider, region, cinema, horizontal }) {
   const [isFetching, setIsFetching] = useState(false);
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState();
@@ -13,7 +13,13 @@ function Movies({ categories, platform, horizontal }) {
       setIsFetching(true);
 
       try {
-        const fetchedResult = await fetchingMovies(categories, platform);
+        const fetchedResult = await fetchingMovies(
+          categories,
+          lang,
+          provider,
+          region,
+          cinema
+        );
         const movies = fetchedResult.results;
 
         setMovies(movies);
@@ -28,7 +34,7 @@ function Movies({ categories, platform, horizontal }) {
     }
 
     fetchMovies();
-  }, [categories]);
+  }, [categories, cinema, lang, provider, region]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;
@@ -49,7 +55,7 @@ function Movies({ categories, platform, horizontal }) {
         {movies.map((movie) => (
           <Movie
             key={movie.id}
-            title={movie.original_title}
+            title={movie.title}
             year={movie.release_date}
             rate={movie.vote_average}
             image={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}

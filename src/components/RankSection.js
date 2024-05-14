@@ -5,7 +5,14 @@ function RankSection(props) {
   return (
     <section className={classes.section}>
       <h2>{props.title}</h2>
-      <Movies categories={[]} horizontal />
+      <Movies
+        categories={[]}
+        lang={props.lang}
+        provider={props.provider}
+        region={props.region}
+        cinema={props.cinema}
+        horizontal
+      />
     </section>
   );
 }
