@@ -13,7 +13,7 @@ function RandomMovie() {
       <h1>Movie of the day</h1>
       <div className={classes.section_title}>
         <h2>Title</h2>
-        <p>2020 • Sci-Fi | Action • PG-18</p>
+        <p>2020 • Sci-Fi | Action • PG-13</p>
         <p className={classes.streamings}>
           <span>
             <img src={netflix} alt="" />

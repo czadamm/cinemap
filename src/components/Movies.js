@@ -3,7 +3,15 @@ import classes from "./Movies.module.css";
 import { fetchingMovies } from "../utils/fetching";
 import Movie from "./MovieCard";
 
-function Movies({ categories, lang, provider, region, cinema, horizontal }) {
+function Movies({
+  categories,
+  lang,
+  provider,
+  region,
+  cinema,
+  min_votes,
+  horizontal,
+}) {
   const [isFetching, setIsFetching] = useState(false);
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState();
@@ -18,7 +26,8 @@ function Movies({ categories, lang, provider, region, cinema, horizontal }) {
           lang,
           provider,
           region,
-          cinema
+          cinema,
+          min_votes
         );
         const movies = fetchedResult.results;
 
@@ -34,7 +43,7 @@ function Movies({ categories, lang, provider, region, cinema, horizontal }) {
     }
 
     fetchMovies();
-  }, [categories, cinema, lang, provider, region]);
+  }, [categories, cinema, lang, min_votes, provider, region]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;

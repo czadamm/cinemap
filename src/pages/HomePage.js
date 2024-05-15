@@ -8,27 +8,30 @@ function HomePage() {
       <RandomMovie />
       <RankSection
         title="Popular in cinemas"
-        lang={LANGUAGES.pl.lang}
-        region={LANGUAGES.pl.region}
+        lang={LANGUAGES.us.lang}
+        region={LANGUAGES.us.region}
         cinema={true}
       />
       <RankSection
         title="Best on Netflix"
-        lang={LANGUAGES.pl.lang}
+        lang={LANGUAGES.us.lang}
         provider={PROVIDERS.netflix}
-        region={LANGUAGES.pl.region}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
       />
       <RankSection
         title="Best on Disney+"
-        lang={LANGUAGES.pl.lang}
+        lang={LANGUAGES.us.lang}
         provider={PROVIDERS.disney}
-        region={LANGUAGES.pl.region}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
       />
       <RankSection
-        title="Best on HBO MAX"
-        lang={LANGUAGES.pl.lang}
-        provider={PROVIDERS.hboMAX}
-        region={LANGUAGES.pl.region}
+        title="Best on Amazon Prime"
+        lang={LANGUAGES.us.lang}
+        provider={PROVIDERS.amazon}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
       />
     </main>
   );
