@@ -1,7 +1,8 @@
 .section {
   position: relative;
+  margin-top: 2rem;
   padding-block: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .section h2 {
