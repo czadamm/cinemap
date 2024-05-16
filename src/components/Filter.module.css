@@ -1,0 +1,47 @@
+.filter {
+  margin-bottom: 2rem;
+}
+
+.filter h2 {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.clear_filter {
+  position: absolute;
+  display: inline-block;
+  margin-left: 1rem;
+  line-height: 2rem;
+}
+
+.filters_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.filters_list li {
+  padding: 3px 1rem;
+  border: 1px solid var(--main-text-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filters_list li.active {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.movie_title input {
+  padding: 5px 1rem;
+  width: 200px;
+  font-size: 1rem;
+  color: var(--main-text-color);
+  background-color: transparent;
+  border: 1px solid var(--main-text-color);
+  border-radius: 4px;
+  outline: none;
+}

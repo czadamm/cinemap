@@ -1,0 +1,36 @@
+.filters_section {
+  margin-bottom: 2rem;
+}
+
+.toggle {
+  display: block;
+  width: 100px;
+  position: relative;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.toggle::after {
+  position: absolute;
+  content: "";
+  top: 12px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.toggle.active::after {
+  border-color: transparent transparent #fff transparent;
+  top: 5px;
+}
+
+.filters {
+  display: none;
+  padding-bottom: 1rem;
+}
+
+.filters.active {
+  display: block;
+}

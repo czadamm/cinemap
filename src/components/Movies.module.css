@@ -1,6 +1,6 @@
 .movies ul {
   display: grid;
-  padding: 1rem;
+  /* padding: 1rem; */
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 2rem;
   list-style: none;
@@ -16,7 +16,7 @@
 .movies ul.horizontal {
   position: relative;
   grid-template-columns: repeat(20, 14rem);
-  gap: 2rem;
+  gap: 1.4rem;
 }
 
 /* .movies ul.horizontal::before {
