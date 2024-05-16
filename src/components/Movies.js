@@ -43,7 +43,7 @@ function Movies({
     }
 
     fetchMovies();
-  }, [categories, cinema, lang, min_votes, provider, region]);
+  }, [categories, cinema, lang, provider, region]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;

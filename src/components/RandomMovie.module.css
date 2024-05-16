@@ -1,3 +1,7 @@
+.random_movie_wrapper {
+  /* padding-inline: 1rem; */
+}
+
 .random_movie {
   position: relative;
   margin-bottom: 2rem;
