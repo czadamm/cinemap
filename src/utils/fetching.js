@@ -2,7 +2,7 @@ export async function fetchingMovies(
   categories = [],
   lang = "en-US",
   provider = "",
-  region = "",
+  region = "us",
   cinema = false,
   min_votes = 500,
   page = 1
@@ -47,6 +47,50 @@ export async function fetchingMovies(
   }
 
   console.log(resData);
+
+  return resData;
+}
+
+export async function fetchingUpcoming(
+  lang = "en-US",
+  region = "us",
+  page = 1
+) {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDEwOGRiY2EyNDVjNmY2MzRiY2M4ZWZjMjRmZjkyZiIsInN1YiI6IjY1ODBjNGI1ZGY4NmE4MDhkYWU4M2RiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LoH_Z-h_dAEYKEev9ZmXTiOnrl80R5lk6VDmfUSGtD8",
+    },
+  };
+
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?language=${lang}&region=${region}&page=${page}`,
+    options
+  );
+
+  const resData = await response.json();
+
+  return resData;
+}
+
+export async function fetchingGenres(lang = "en") {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDEwOGRiY2EyNDVjNmY2MzRiY2M4ZWZjMjRmZjkyZiIsInN1YiI6IjY1ODBjNGI1ZGY4NmE4MDhkYWU4M2RiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LoH_Z-h_dAEYKEev9ZmXTiOnrl80R5lk6VDmfUSGtD8",
+    },
+  };
+
+  const response = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?language=${lang}`,
+    options
+  );
+
+  const resData = await response.json();
 
   return resData;
 }
