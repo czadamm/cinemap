@@ -3,10 +3,3 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-
-.app {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding-inline: var(--main-padding);
-  overflow-x: hidden;
-}
