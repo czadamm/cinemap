@@ -24,9 +24,6 @@ function RandomMovie() {
             </span>
           </p>
         </div>
-        <div className={classes.favourite}>
-          <i className="fa-regular fa-star"></i>
-        </div>
       </div>
     </section>
   );
