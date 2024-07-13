@@ -1,11 +1,21 @@
 .movie {
   position: relative;
-  height: calc(18rem * 1.5);
-  width: 18rem;
+  height: calc(12vw * 1.5);
+  width: 12vw;
   background-color: var(--card-color);
   border-radius: 5px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.664);
-  overflow: hidden;
+}
+
+.movie::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px;
+  width: 80%;
+  box-shadow: 0 0 25px 8px rgb(0, 0, 0);
 }
 
 .movie img {
@@ -13,6 +23,7 @@
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .favourite {
