@@ -1,0 +1,26 @@
+.double {
+  margin-top: 230px;
+  background-image: radial-gradient(
+      50% 20% at 40% 40%,
+      rgba(231, 77, 60, 0.7) 0%,
+      rgba(231, 76, 60, 0) 100%
+    ),
+    radial-gradient(
+      50% 20% at 70% 70%,
+      rgba(0, 120, 138, 0.7) 0%,
+      rgba(0, 119, 138, 0) 100%
+    );
+}
+
+.single {
+  background-image: radial-gradient(
+      50% 20% at 40% 40%,
+      rgba(231, 76, 60, 1) 0%,
+      rgba(231, 76, 60, 0) 100%
+    ),
+    radial-gradient(
+      50% 20% at 70% 70%,
+      rgba(0, 119, 138, 1) 0%,
+      rgba(0, 119, 138, 0) 100%
+    );
+}
