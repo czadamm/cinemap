@@ -5,13 +5,15 @@
   top: 0;
   left: 0;
   height: 150px;
-  width: 100%;
+  width: 100vw;
   align-items: center;
+  transition: all 0.5s;
 }
 
 .scrolled {
+  height: 100px;
   background: rgba(33, 46, 56, 0.521);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(19.6px);
   -webkit-backdrop-filter: blur(19.6px);
   -webkit-animation: show_bg 0.5s ease;
@@ -20,20 +22,24 @@
 
 @-webkit-keyframes show_bg {
   from {
+    height: 150px;
     background: rgba(33, 46, 56, 0);
   }
 
   to {
+    height: 100px;
     background: rgba(33, 46, 56, 0.521);
   }
 }
 
 @keyframes show_bg {
   from {
+    height: 150px;
     background: rgba(33, 46, 56, 0);
   }
 
   to {
+    height: 100px;
     background: rgba(33, 46, 56, 0.521);
   }
 }
