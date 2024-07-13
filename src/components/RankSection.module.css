@@ -6,8 +6,8 @@
 }
 
 .section h2 {
-  margin-block: 10rem 2.5rem;
-  padding-inline: calc((100vw - 1440px) / 2);
+  margin-bottom: 1.5rem;
+  padding-inline: var(--main-padding);
   font-size: 3.1rem;
   text-align: left;
   text-transform: uppercase;

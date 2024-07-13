@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Movies.module.css";
 import { fetchingMovies } from "../utils/fetching";
-import Movie from "./MovieCard";
+import Movie from "./layout/MovieCard";
 
 function Movies({
   categories,

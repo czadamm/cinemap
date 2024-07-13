@@ -5,6 +5,7 @@
   row-gap: 4rem;
   list-style: none;
   /* overflow-y: hidden; */
+  justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -20,5 +21,6 @@
   list-style: none;
   padding-inline: var(--main-padding);
   padding-block: 1rem;
+  justify-content: left;
   /* overflow-y: hidden; */
 }

@@ -1,4 +1,5 @@
 .movie {
+  z-index: 3;
   position: relative;
   height: calc(12vw * 1.5);
   width: 12vw;
