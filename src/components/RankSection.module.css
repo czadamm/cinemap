@@ -1,19 +1,22 @@
 .section {
   position: relative;
   margin-top: 2rem;
+  width: 100vw;
   padding-block: 1rem;
-  /* overflow: hidden; */
 }
 
 .section h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-block: 10rem 2.5rem;
+  padding-inline: calc((100vw - 1440px) / 2);
+  font-size: 3.1rem;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(34, 48, 59, 0.384);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
 .rank {
-  /* background-color: gray; */
-  padding-block: 1rem;
+  padding-block: 1rem 2rem;
   border-radius: 6px;
-  /* box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.329); */
-  overflow-y: hidden;
 }
