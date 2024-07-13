@@ -1,9 +1,24 @@
 .movies ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  row-gap: 4rem;
+  list-style: none;
+  /* overflow-y: hidden; */
+}
+
+@media screen and (max-width: 1200px) {
+  .movies ul {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+
+.movies ul.horizontal {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  gap: 2rem;
+  gap: 1vw;
   list-style: none;
-  padding-inline: calc((100vw - 1440px) / 2);
+  padding-inline: var(--main-padding);
   padding-block: 1rem;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
