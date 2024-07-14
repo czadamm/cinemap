@@ -4,7 +4,7 @@
 
 .filter h2 {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: normal;
   margin-bottom: 1rem;
 }
@@ -20,11 +20,12 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .filters_list li {
-  padding: 3px 1rem;
+  padding: 3px 1.5rem;
+  font-size: 1.7rem;
   border: 1px solid var(--main-text-color);
   border-radius: 4px;
   cursor: pointer;
@@ -36,12 +37,32 @@
 }
 
 .movie_title input {
-  padding: 5px 1rem;
+  padding: 5px 1.5rem;
   width: 200px;
-  font-size: 1rem;
+  font-size: 1.7rem;
   color: var(--main-text-color);
   background-color: transparent;
   border: 1px solid var(--main-text-color);
   border-radius: 4px;
   outline: none;
+}
+
+.movie_title input::-webkit-input-placeholder {
+  color: #979797;
+}
+
+.movie_title input::-moz-placeholder {
+  color: #979797;
+}
+
+.movie_title input:-ms-input-placeholder {
+  color: #979797;
+}
+
+.movie_title input::-ms-input-placeholder {
+  color: #979797;
+}
+
+.movie_title input::placeholder {
+  color: #979797;
 }
