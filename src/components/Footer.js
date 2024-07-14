@@ -16,13 +16,23 @@ function Footer() {
           </span>
         </p>
       </div>
-      <div className={classes.navigation}>
-        <Link to="/">Home</Link>
-        <Link to="/library">Library</Link>
-        <Link to="/upcoming">Upcoming</Link>
-        <Link to="/help">Help</Link>
-        <Link to="/cookies">Cookies</Link>
-      </div>
+      <ul className={classes.navigation}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/library">Library</Link>
+        </li>
+        <li>
+          <Link to="/upcoming">Upcoming</Link>
+        </li>
+        <li>
+          <Link to="/help">Help</Link>
+        </li>
+        <li>
+          <Link to="/cookies">Cookies</Link>
+        </li>
+      </ul>
     </footer>
   );
 }
