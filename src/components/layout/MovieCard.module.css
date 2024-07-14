@@ -32,12 +32,19 @@
   display: flex;
   top: 6px;
   right: 6px;
-  height: 2.6rem;
-  width: 2.6rem;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.8rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   border-radius: 50%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.favourite:hover {
+  color: var(--accent-color-red);
 }
 
 .rating {
@@ -45,12 +52,13 @@
   display: flex;
   top: 6px;
   left: 6px;
-  height: 2.6rem;
-  width: 2.6rem;
+  height: 4rem;
+  width: 4rem;
   align-items: center;
   justify-content: center;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--favourite-color);
-  background-color: rgb(32, 39, 46);
+  background-color: var(--background-color);
   border-radius: 50%;
 }
