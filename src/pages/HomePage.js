@@ -1,5 +1,5 @@
-import RandomMovie from "../components/RandomMovie";
-import RankSection from "../components/RankSection";
+import RandomMovie from "../components/movies/RandomMovie";
+import RankSection from "../components/movies/RankSection";
 import { PROVIDERS, LANGUAGES } from "../utils/tmdb";
 
 function HomePage() {

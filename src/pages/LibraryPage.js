@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Filters from "../components/Filters";
-import Movies from "../components/Movies";
+import Filters from "../components/filters/Filters";
+import Movies from "../components/movies/Movies";
 import { LANGUAGES } from "../utils/tmdb";
 import { CATEGORIES } from "../utils/tmdb";
 

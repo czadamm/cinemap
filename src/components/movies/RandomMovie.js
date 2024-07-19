@@ -1,6 +1,6 @@
 import classes from "./RandomMovie.module.css";
-import netflix from "../assets/netflix.svg";
-import disney from "../assets/disney.svg";
+import netflix from "../../assets/netflix.svg";
+import disney from "../../assets/disney.svg";
 
 function RandomMovie() {
   return (
