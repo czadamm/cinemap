@@ -4,7 +4,7 @@ import { fetchingMovies } from "../utils/fetching";
 import Movie from "./layout/MovieCard";
 
 function Movies({
-  categories,
+  activeCategories,
   lang,
   provider,
   region,
@@ -22,7 +22,7 @@ function Movies({
 
       try {
         const fetchedResult = await fetchingMovies(
-          categories,
+          activeCategories,
           lang,
           provider,
           region,
@@ -43,7 +43,7 @@ function Movies({
     }
 
     fetchMovies();
-  }, [categories, cinema, lang, min_votes, provider, region]);
+  }, [activeCategories, cinema, lang, min_votes, provider, region]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;
@@ -59,8 +59,17 @@ function Movies({
 
   return (
     <section className={classes.movies}>
-      {isFetching && <p>Fetching...</p>}
-      <ul className={customClass}>
+      {isFetching && (
+        <div className={classes.spinner_wrapper}>
+          <span className={classes.spinner}></span>
+        </div>
+      )}
+      {movies.length <= 0 && (
+        <p className={classes.no_movies}>
+          There is no movies with selected criteria.
+        </p>
+      )}
+      <ul className={`${customClass} ${isFetching && classes.fetching}`}>
         {movies.map((movie) => (
           <Movie
             key={movie.id}
