@@ -4,10 +4,12 @@
   border: 1px solid var(--main-text-color);
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .filter_item:hover {
   border-color: var(--accent-color-red);
+  color: var(--accent-color-red);
 }
 
 .filter_item.active {

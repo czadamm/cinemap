@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./Movies.module.css";
 import { fetchingMovies } from "../../utils/fetching";
 import Movie from "./MovieCard";
+import Spinner from "../Spinner";
 
 function Movies({
   activeCategories,
@@ -59,11 +60,7 @@ function Movies({
 
   return (
     <section className={classes.movies}>
-      {isFetching && (
-        <div className={classes.spinner_wrapper}>
-          <span className={classes.spinner}></span>
-        </div>
-      )}
+      {isFetching && <Spinner />}
       {movies.length <= 0 && (
         <p className={classes.no_movies}>
           Sorry, we couldn't find movies with selected criteria.
@@ -73,6 +70,7 @@ function Movies({
         {movies.map((movie) => (
           <Movie
             key={movie.id}
+            id={movie.id}
             title={movie.title}
             year={movie.release_date}
             rate={movie.vote_average}
