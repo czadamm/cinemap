@@ -1,4 +1,3 @@
-import BgWrapper from "../components/layout/BgWrapper";
 import RandomMovie from "../components/RandomMovie";
 import RankSection from "../components/RankSection";
 import { PROVIDERS, LANGUAGES } from "../utils/tmdb";
@@ -7,35 +6,33 @@ function HomePage() {
   return (
     <>
       <RandomMovie />
-      <BgWrapper double>
-        <RankSection
-          title="Popular in cinemas"
-          lang={LANGUAGES.us.lang}
-          region={LANGUAGES.us.region}
-          cinema={true}
-        />
-        <RankSection
-          title="Best on Netflix"
-          lang={LANGUAGES.us.lang}
-          provider={PROVIDERS.netflix}
-          region={LANGUAGES.us.region}
-          min_votes={10000}
-        />
-        <RankSection
-          title="Best on Disney+"
-          lang={LANGUAGES.us.lang}
-          provider={PROVIDERS.disney}
-          region={LANGUAGES.us.region}
-          min_votes={10000}
-        />
-        <RankSection
-          title="Best on Amazon Prime"
-          lang={LANGUAGES.us.lang}
-          provider={PROVIDERS.amazon}
-          region={LANGUAGES.us.region}
-          min_votes={10000}
-        />
-      </BgWrapper>
+      <RankSection
+        title="Popular in cinemas"
+        lang={LANGUAGES.us.lang}
+        region={LANGUAGES.us.region}
+        cinema={true}
+      />
+      <RankSection
+        title="Best on Netflix"
+        lang={LANGUAGES.us.lang}
+        provider={PROVIDERS.netflix}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
+      />
+      <RankSection
+        title="Best on Disney+"
+        lang={LANGUAGES.us.lang}
+        provider={PROVIDERS.disney}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
+      />
+      <RankSection
+        title="Best on Amazon Prime"
+        lang={LANGUAGES.us.lang}
+        provider={PROVIDERS.amazon}
+        region={LANGUAGES.us.region}
+        min_votes={10000}
+      />
     </>
   );
 }
