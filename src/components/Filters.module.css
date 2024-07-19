@@ -1,5 +1,6 @@
 .filters_section {
   margin-inline: auto;
+  margin-top: 150px;
   margin-bottom: 2rem;
   padding-inline: 10rem;
   width: 100%;
@@ -31,7 +32,6 @@
   border-color: #fff transparent transparent transparent;
   transform: rotate(0);
   transition: 0.2s;
-  background-color: black;
 }
 
 .toggle.active::after {
@@ -66,7 +66,7 @@
 }
 
 .filters.active {
-  height: 350px;
+  height: 250px;
   opacity: 1;
   -webkit-animation: toggle_filters 0.2s ease-in;
   animation: toggle_filters 0.2s ease-in;
@@ -78,7 +78,7 @@
     opacity: 0;
   }
   to {
-    height: 350px;
+    height: 250px;
     opacity: 1;
   }
 }
@@ -89,7 +89,7 @@
     opacity: 0;
   }
   to {
-    height: 350px;
+    height: 250px;
     opacity: 1;
   }
 }

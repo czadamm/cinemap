@@ -1,6 +1,7 @@
 import classes from "./Filter.module.css";
+import FilterItem from "./FilterItem";
 
-function Filter({ title, filterList, byTitle }) {
+function Filter({ title, filterList, activeCategories, onSelect, byTitle }) {
   return (
     <div className={classes.filter}>
       <h2>{title}</h2>
@@ -9,8 +10,13 @@ function Filter({ title, filterList, byTitle }) {
       </div>
       {filterList && (
         <ul className={classes.filters_list}>
-          {filterList.map((filter) => (
-            <li key={filter.value}>{filter.label}</li>
+          {filterList.map((filterItem) => (
+            <FilterItem
+              key={filterItem.value}
+              category={filterItem}
+              isActive={activeCategories.includes(filterItem.value)}
+              onSelect={() => onSelect(filterItem.value)}
+            />
           ))}
         </ul>
       )}

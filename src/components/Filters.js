@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { CATEGORIES, SORTING } from "../utils/tmdb";
 import Filter from "./Filter";
 import classes from "./Filters.module.css";
 
-function Filters() {
+function Filters(props) {
   const [active, setActive] = useState(false);
 
   function toggleFilters() {
@@ -25,8 +24,12 @@ function Filters() {
           !active ? classes.filters : `${classes.filters} ${classes.active}`
         }
       >
-        <Filter filterList={CATEGORIES} title="Categories" />
-        <Filter filterList={SORTING} title="Sort By" />
+        <Filter
+          filterList={props.categories}
+          activeCategories={props.activeCategories}
+          onSelect={props.onUpdate}
+          title="Categories"
+        />
         <Filter byTitle title="Find By Title" />
       </div>
     </section>

@@ -1,0 +1,17 @@
+.filter_item {
+  padding: 3px 1.5rem;
+  font-size: 1.7rem;
+  border: 1px solid var(--main-text-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter_item:hover {
+  border-color: var(--accent-color-red);
+}
+
+.filter_item.active {
+  color: var(--main-text-color);
+  background-color: var(--accent-color-red);
+  border-color: var(--accent-color-red);
+}

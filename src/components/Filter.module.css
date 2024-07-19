@@ -23,17 +23,10 @@
   gap: 1rem;
 }
 
-.filters_list li {
-  padding: 3px 1.5rem;
-  font-size: 1.7rem;
-  border: 1px solid var(--main-text-color);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .filters_list li.active {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  color: var(--main-text-color);
+  background-color: var(--accent-color-red);
+  border-color: var(--accent-color-red);
 }
 
 .movie_title input {

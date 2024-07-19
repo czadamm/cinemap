@@ -7,7 +7,7 @@ export async function fetchingMovies(
   min_votes = 500,
   page = 1
 ) {
-  const listOFCategories = categories.map((category) => category.value);
+  const listOFCategories = [...categories];
 
   const options = {
     method: "GET",
@@ -20,7 +20,7 @@ export async function fetchingMovies(
 
   let response;
 
-  if (!categories.length) {
+  if (!listOFCategories.length) {
     if (cinema) {
       response = await fetch(
         `https://api.themoviedb.org/3/movie/now_playing?language=${lang}&page=1&region=${region}`,
@@ -35,7 +35,7 @@ export async function fetchingMovies(
   } else {
     response = await fetch(
       `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}&with_genres=${listOFCategories.join(
-        "%"
+        "%2C"
       )}`,
       options
     );
