@@ -51,6 +51,26 @@ export async function fetchingMovies(
   return resData;
 }
 
+export async function fetchingMovie(id, lang = "en-US") {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDEwOGRiY2EyNDVjNmY2MzRiY2M4ZWZjMjRmZjkyZiIsInN1YiI6IjY1ODBjNGI1ZGY4NmE4MDhkYWU4M2RiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LoH_Z-h_dAEYKEev9ZmXTiOnrl80R5lk6VDmfUSGtD8",
+    },
+  };
+
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
+    options
+  );
+
+  const resData = await response.json();
+
+  return resData;
+}
+
 export async function fetchingUpcoming(
   lang = "en-US",
   region = "us",
@@ -75,7 +95,7 @@ export async function fetchingUpcoming(
   return resData;
 }
 
-export async function fetchingGenres(lang = "en") {
+export async function fetchingGenres(lang = "en-US") {
   const options = {
     method: "GET",
     headers: {
