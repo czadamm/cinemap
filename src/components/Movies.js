@@ -66,7 +66,7 @@ function Movies({
       )}
       {movies.length <= 0 && (
         <p className={classes.no_movies}>
-          There is no movies with selected criteria.
+          Sorry, we couldn't find movies with selected criteria.
         </p>
       )}
       <ul className={`${customClass} ${isFetching && classes.fetching}`}>
