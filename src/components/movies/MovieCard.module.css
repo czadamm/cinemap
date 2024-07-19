@@ -1,8 +1,14 @@
+.movie_card {
+  position: relative;
+}
+
 .movie {
   z-index: 0;
   position: relative;
+  display: block;
   height: 100%;
   width: 100%;
+  color: var(--main-text-color);
   background-color: var(--card-color);
   border-radius: 5px;
   cursor: pointer;
@@ -74,7 +80,9 @@
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  color: var(--main-text-color);
   background-color: var(--background-color);
+  border: none;
   border-radius: 50%;
   transition: 0.2s;
   cursor: pointer;
