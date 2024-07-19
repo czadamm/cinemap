@@ -6,6 +6,7 @@ import UpcomingPage from "./pages/UpcomingPage";
 import LoginPage from "./pages/LoginPage";
 import RootLayout from "./layouts/RootLayout";
 import ErrorPage from "./pages/errors/ErrorPage";
+import MovieDetails from "./pages/MovieDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "library", element: <LibraryPage /> },
       { path: "upcoming", element: <UpcomingPage /> },
       { path: "sign-in", element: <LoginPage /> },
+      { path: "movie/:id", element: <MovieDetails /> },
     ],
     errorElement: <ErrorPage />,
   },
