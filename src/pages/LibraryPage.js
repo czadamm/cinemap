@@ -29,7 +29,7 @@ function LibraryPage() {
         activeCategories={activeCategories}
         onUpdate={toggleCategories}
       />
-      <Movies activeCategories={activeCategories} lang={LANGUAGES.pl.lang} />
+      <Movies activeCategories={activeCategories} lang={LANGUAGES.us.lang} />
     </>
   );
 }

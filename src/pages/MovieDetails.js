@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { fetchingMovie } from "../utils/fetching";
 import Spinner from "../components/Spinner";
+import defaultImage from "../assets/person-default.png";
 
 import classes from "./MovieDetails.module.css";
+import CreditsCard from "../components/movies/CreditsCard";
 
 function MovieDetails() {
   const params = useParams();
   const [isFetching, setIsFetching] = useState(false);
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null);
   const [error, setError] = useState();
 
   useEffect(() => {
@@ -16,7 +18,7 @@ function MovieDetails() {
       setIsFetching(true);
 
       try {
-        const fetchedResult = await fetchingMovie(params.id, "pl-PL");
+        const fetchedResult = await fetchingMovie(params.id);
         const movie = fetchedResult;
 
         setMovie(movie);
@@ -39,22 +41,152 @@ function MovieDetails() {
 
   return (
     <>
-      <article className={classes.movie_details}>
-        {isFetching && <Spinner />}
-        <img
-          className={classes.background}
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          alt=""
-        />
-        <div className={classes.left_info}>
-          <img
-            className={classes.movie_image}
-            src={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
-            alt={movie.title}
-          />
-        </div>
-        <div className={classes.right_info}></div>
-      </article>
+      {isFetching && <Spinner />}
+      {movie && (
+        <article className={classes.movie_details}>
+          <div className={classes.backdrop}>
+            <img
+              src={`https://image.tmdb.org/t/p/original${movie.data.backdrop_path}`}
+              alt=""
+            />
+          </div>
+          <div className={classes.container}>
+            <div className={classes.left_info}>
+              <div className={classes.poster}>
+                <img
+                  className={classes.movie_image}
+                  src={`https://image.tmdb.org/t/p/original${movie.data.poster_path}`}
+                  alt={movie.data.title}
+                />
+              </div>
+              <div className={classes.info_row}>
+                <h3>Release date</h3>
+                <p>{movie.data.release_date}</p>
+              </div>
+              <div className={classes.info_row}>
+                <h3>Budget</h3>
+                <p>
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(movie.data.budget)}
+                </p>
+              </div>
+              <div className={classes.info_row}>
+                <h3>Revenue</h3>
+                <p>
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(movie.data.revenue)}
+                </p>
+              </div>
+            </div>
+            <div className={classes.right_info}>
+              <div className={classes.top_info_row}>
+                <div className={classes.rate_bg}>
+                  <div className={classes.rate}>
+                    <span>{movie.data.vote_average.toFixed(1)}</span>
+                  </div>
+                </div>
+                <div className={classes.title}>
+                  {movie.images.logos.length ? (
+                    <div className={classes.title_image}>
+                      <img
+                        src={`https:/image.tmdb.org/t/p/original${movie.images.logos[0].file_path}`}
+                        alt=""
+                      />
+                    </div>
+                  ) : (
+                    <h2 className={classes.movie_title}>
+                      {movie.data.title}
+                      <span>({movie.data.release_date.slice(0, 4)})</span>
+                    </h2>
+                  )}
+                  {/* <h2 className={classes.movie_title}>
+                    {movie.data.title}
+                    <span>({movie.data.release_date.slice(0, 4)})</span>
+                  </h2> */}
+                  <ul className={classes.genres}>
+                    {movie.data.genres.map((genre) => (
+                      <li key={genre.name}>{genre.name}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className={classes.info_row}>
+                <h3>Overview</h3>
+                <p>{movie.data.overview}</p>
+              </div>
+              {/* <div className={classes.info_row}>
+                <h3>Now Playing</h3>
+                <p>
+                  <ul className={classes.providers}>
+                    <li>
+                      <a href="/">
+                        <img
+                          src="https://media.themoviedb.org/t/p/original/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <img
+                          src="https://media.themoviedb.org/t/p/original/97yvRBw1GzX7fXprcF80er19ot.jpg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <img
+                          src="https://media.themoviedb.org/t/p/original/dQeAar5H991VYporEjUspolDarG.jpg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </p>
+              </div> */}
+              <div className={classes.info_row}>
+                <h3>Cast</h3>
+                <ul className={classes.credits_list}>
+                  {movie.credits.cast.map((person) => (
+                    <CreditsCard
+                      key={person.cast_id}
+                      image={
+                        !person.profile_path
+                          ? defaultImage
+                          : `https://media.themoviedb.org/t/p/w220_and_h330_face${person.profile_path}`
+                      }
+                      name={person.name}
+                      character={person.character}
+                    />
+                  ))}
+                </ul>
+              </div>
+              <div className={classes.info_row}>
+                <h3>Crew</h3>
+                <ul className={classes.credits_list}>
+                  {movie.credits.crew.map((person) => (
+                    <CreditsCard
+                      key={person.credit_id}
+                      image={
+                        !person.profile_path
+                          ? defaultImage
+                          : `https://media.themoviedb.org/t/p/w220_and_h330_face${person.profile_path}`
+                      }
+                      name={person.name}
+                      position={person.job}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      )}
     </>
   );
 }

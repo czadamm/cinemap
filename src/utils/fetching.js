@@ -51,7 +51,7 @@ export async function fetchingMovies(
   return resData;
 }
 
-export async function fetchingMovie(id, lang = "en-US") {
+export async function fetchingMovie(id, lang = "en", region = "en-US") {
   const options = {
     method: "GET",
     headers: {
@@ -61,12 +61,28 @@ export async function fetchingMovie(id, lang = "en-US") {
     },
   };
 
-  const response = await fetch(
+  const movie = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
     options
   );
 
-  const resData = await response.json();
+  const credits = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/credits`,
+    options
+  );
+
+  const images = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/images?include_image_language=${lang}&language=${region}`,
+    options
+  );
+
+  const movieData = await movie.json();
+  const creditsData = await credits.json();
+  const imagesData = await images.json();
+
+  const resData = { data: movieData, credits: creditsData, images: imagesData };
+
+  console.log(resData);
 
   return resData;
 }
