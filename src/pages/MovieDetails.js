@@ -18,10 +18,9 @@ function MovieDetails() {
       setIsFetching(true);
 
       try {
-        const fetchedResult = await fetchingMovie(params.id);
-        const movie = fetchedResult;
+        const fetchedMovie = await fetchingMovie(params.id);
 
-        setMovie(movie);
+        setMovie(fetchedMovie);
         setIsFetching(false);
       } catch (error) {
         setError({
@@ -90,7 +89,8 @@ function MovieDetails() {
                   </div>
                 </div>
                 <div className={classes.title}>
-                  {movie.images.logos.length ? (
+                  {/* ====== MOVIE TITLE IMAGE ====== */}
+                  {/* {movie.images.logos.length ? (
                     <div className={classes.title_image}>
                       <img
                         src={`https:/image.tmdb.org/t/p/original${movie.images.logos[0].file_path}`}
@@ -102,11 +102,11 @@ function MovieDetails() {
                       {movie.data.title}
                       <span>({movie.data.release_date.slice(0, 4)})</span>
                     </h2>
-                  )}
-                  {/* <h2 className={classes.movie_title}>
+                  )} */}
+                  <h2 className={classes.movie_title}>
                     {movie.data.title}
                     <span>({movie.data.release_date.slice(0, 4)})</span>
-                  </h2> */}
+                  </h2>
                   <ul className={classes.genres}>
                     {movie.data.genres.map((genre) => (
                       <li key={genre.name}>{genre.name}</li>
@@ -118,37 +118,6 @@ function MovieDetails() {
                 <h3>Overview</h3>
                 <p>{movie.data.overview}</p>
               </div>
-              {/* <div className={classes.info_row}>
-                <h3>Now Playing</h3>
-                <p>
-                  <ul className={classes.providers}>
-                    <li>
-                      <a href="/">
-                        <img
-                          src="https://media.themoviedb.org/t/p/original/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <img
-                          src="https://media.themoviedb.org/t/p/original/97yvRBw1GzX7fXprcF80er19ot.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <img
-                          src="https://media.themoviedb.org/t/p/original/dQeAar5H991VYporEjUspolDarG.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                </p>
-              </div> */}
               <div className={classes.info_row}>
                 <h3>Cast</h3>
                 <ul className={classes.credits_list}>
