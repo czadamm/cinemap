@@ -80,6 +80,22 @@ function MovieDetails() {
                   }).format(movie.data.revenue)}
                 </p>
               </div>
+              <div className={classes.info_row}>
+                <h3>Production</h3>
+                <ul>
+                  {movie.data.production_countries.map((country) => (
+                    <li key={country.name}>{country.name}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={classes.info_row}>
+                <h3>Studios</h3>
+                <ul>
+                  {movie.data.production_companies.map((country) => (
+                    <li key={country.name}>{country.name}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className={classes.right_info}>
               <div className={classes.top_info_row}>

@@ -1,6 +1,8 @@
 .backdrop {
   z-index: -1;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   opacity: 0.04;
@@ -31,7 +33,7 @@
 .container {
   display: flex;
   margin-inline: auto;
-  padding-top: 230px;
+  margin-top: 230px;
   padding-inline: var(--main-padding);
   width: 100%;
   max-width: 1500px;
@@ -170,6 +172,18 @@
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: 100;
+}
+
+.info_row ul {
+  list-style: none;
+}
+
+.info_row ul li::after {
+  content: ", ";
+}
+
+.info_row ul li:last-child::after {
+  content: "";
 }
 
 .providers {
