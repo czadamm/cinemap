@@ -75,7 +75,7 @@ function Movies({
           />
         ))}
       </ul>
-      {!isFetching & (movies.length <= 0) && (
+      {!isFetching && movies.length <= 0 && (
         <p className={classes.no_movies}>
           Sorry, we couldn't find movies with selected criteria.
         </p>
