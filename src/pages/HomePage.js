@@ -7,7 +7,7 @@ function HomePage() {
     <>
       <RandomMovie />
       <RankSection
-        title="Popular in cinemas"
+        title="Popular in theaters"
         lang={LANGUAGES.us.lang}
         region={LANGUAGES.us.region}
         cinema={true}

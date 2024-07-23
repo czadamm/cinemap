@@ -10,6 +10,7 @@ function Movies({
   provider,
   region,
   cinema,
+  upcoming,
   min_votes,
   horizontal,
 }) {
@@ -28,6 +29,7 @@ function Movies({
           provider,
           region,
           cinema,
+          upcoming,
           min_votes
         );
         const movies = fetchedResult.results;
@@ -44,7 +46,7 @@ function Movies({
     }
 
     fetchMovies();
-  }, [activeCategories, cinema, lang, min_votes, provider, region]);
+  }, [activeCategories, cinema, lang, min_votes, provider, region, upcoming]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;
@@ -59,13 +61,8 @@ function Movies({
   }
 
   return (
-    <section className={classes.movies}>
+    <section className={`${classes.movies} ${upcoming && classes.padded_top}`}>
       {isFetching && <Spinner />}
-      {movies.length <= 0 && (
-        <p className={classes.no_movies}>
-          Sorry, we couldn't find movies with selected criteria.
-        </p>
-      )}
       <ul className={`${customClass} ${isFetching && classes.fetching}`}>
         {movies.map((movie) => (
           <Movie
@@ -78,6 +75,11 @@ function Movies({
           />
         ))}
       </ul>
+      {!isFetching & (movies.length <= 0) && (
+        <p className={classes.no_movies}>
+          Sorry, we couldn't find movies with selected criteria.
+        </p>
+      )}
     </section>
   );
 }

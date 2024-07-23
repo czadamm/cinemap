@@ -15,8 +15,9 @@ export async function fetchingMovies(
   provider = "",
   region = "us",
   cinema = false,
+  upcoming = false,
   min_votes = 200,
-  page = 6
+  page = 1
 ) {
   const listOFCategories = [...categories];
 
@@ -28,6 +29,13 @@ export async function fetchingMovies(
         `https://api.themoviedb.org/3/movie/now_playing?language=${lang}&page=1&region=${region}`,
         options
       );
+    } else if (upcoming) {
+      response = await fetch(
+        `https://api.themoviedb.org/3/movie/upcoming?language=${lang}&region=${region}&page=${page}`,
+        options
+      );
+
+      console.log("upcoming");
     } else {
       response = await fetch(
         `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}`,
@@ -76,21 +84,6 @@ export async function fetchingMovie(id, lang = "en", region = "en-US") {
   const resData = { data: movieData, credits: creditsData, images: imagesData };
 
   console.log(resData);
-
-  return resData;
-}
-
-export async function fetchingUpcoming(
-  lang = "en-US",
-  region = "us",
-  page = 1
-) {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?language=${lang}&region=${region}&page=${page}`,
-    options
-  );
-
-  const resData = await response.json();
 
   return resData;
 }

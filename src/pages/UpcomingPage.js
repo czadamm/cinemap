@@ -1,5 +1,11 @@
+import Movies from "../components/movies/Movies";
+
 function UpcomingPage() {
-  return <h1>Upcoming</h1>;
+  return (
+    <>
+      <Movies upcoming={true} />
+    </>
+  );
 }
 
 export default UpcomingPage;
