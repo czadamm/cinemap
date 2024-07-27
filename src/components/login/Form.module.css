@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  /* background-color: #fff; */
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.google_button {
+  position: relative;
+  display: flex;
+  height: 55px;
+  width: 100%;
+  padding-inline: 3rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: var(--main-text-color);
+  background: rgba(92, 92, 92, 0.14);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.171);
+  border-radius: 7px;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.google_button:active {
+  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.096);
+}
+
+.google_button:hover {
+  background: rgba(124, 124, 124, 0.14);
+}
+
+.google_button span {
+  position: absolute;
+  top: 17px;
+  right: 1.5rem;
+}
+
+.message_between {
+  display: flex;
+  height: 25px;
+  width: 100%;
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-text-color);
+  opacity: 0.6;
+}

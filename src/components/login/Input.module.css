@@ -1,0 +1,66 @@
+.input_group {
+  position: relative;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.input {
+  height: 55px;
+  width: 100%;
+  padding-inline: 3rem;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: var(--main-text-color);
+  background: rgba(12, 12, 12, 0.14);
+  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.171);
+  border-radius: 7px;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(131, 131, 131, 0.055);
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.192);
+  font-size: 1.8rem;
+  transition: all 0.2s;
+}
+
+.input:focus ~ .label {
+  color: var(--main-text-color);
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+.input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.input::-moz-placeholder {
+  color: transparent;
+}
+
+.input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.input::placeholder {
+  color: transparent;
+}

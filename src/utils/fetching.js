@@ -16,6 +16,7 @@ export async function fetchingMovies(
   region = "us",
   cinema = false,
   upcoming = false,
+  adult = false,
   min_votes = 200,
   page = 1
 ) {
@@ -38,7 +39,7 @@ export async function fetchingMovies(
       console.log("upcoming");
     } else {
       response = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}`,
+        `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}`,
         options
       );
     }
@@ -50,6 +51,7 @@ export async function fetchingMovies(
       options
     );
   }
+
   const resData = await response.json();
 
   if (!response.ok) {

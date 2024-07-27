@@ -1,0 +1,21 @@
+.button {
+  padding: 0.9rem 3rem;
+  border: 1px solid var(--main-text-color);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-size: 2rem;
+  font-weight: 200;
+  border: 1px solid var(--main-text-color);
+  cursor: pointer;
+}
+
+.button.red {
+  background-color: var(--accent-color-red);
+  border: none;
+}
+
+.button.blue {
+  background-color: var(--accent-color-green);
+  border: none;
+}

@@ -1,23 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
 :root {
   --background-color: #22303b;
   --card-color: #34495e;
-  --accent-color-red: #e74c3c;
+  --accent-color-red: rgb(231, 76, 60);
   --accent-color-green: #1fb4b5;
   --main-text-color: #ecf0f1;
   --favourite-color: #f1c40f;
   --rating-color: #1abc9c;
   --max-width: 1920px;
   --main-padding: 5vw;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Noto Sans", sans-serif;
   font-size: 10px;
   font-weight: 300;
   color: var(--main-text-color);
@@ -25,11 +23,12 @@ html {
 
 body {
   background-color: var(--background-color);
-  /* background-image: radial-gradient(
-    50% 20% at 70% 70%,
-    rgba(0, 120, 138, 0.7) 0%,
-    rgba(0, 119, 138, 0) 100%
-  ); */
+  /* background-image: url("./assets/gradient-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; */
+  /* -webkit-backdrop-filter: blur(200px);
+  backdrop-filter: blur(100px); */
   width: 100vw;
   overflow-x: hidden;
 }

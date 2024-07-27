@@ -1,4 +1,6 @@
 .footer {
+  z-index: 99;
+  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 6rem;

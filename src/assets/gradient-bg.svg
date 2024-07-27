@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1051.857" viewBox="0 0 1920 1051.857">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e74c3c" stop-opacity="0.929"/>
+      <stop offset="0.167" stop-color="#e74c3c" stop-opacity="0.851"/>
+      <stop offset="0.372" stop-color="#e74c3c" stop-opacity="0.631"/>
+      <stop offset="0.565" stop-color="#e74c3c" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="gray" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00778a" stop-opacity="0.929"/>
+      <stop offset="0.167" stop-color="#00778a" stop-opacity="0.82"/>
+      <stop offset="0.372" stop-color="#00778a" stop-opacity="0.62"/>
+      <stop offset="0.565" stop-color="#00778a" stop-opacity="0.412"/>
+      <stop offset="1" stop-color="#00778a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="Group_83" data-name="Group 83" transform="translate(0 -12.571)" opacity="0.63">
+    <path id="Path_3" data-name="Path 3" d="M844.147,0c444.585,0,601.343,235.466,601.343,525.929s-156.759,525.929-601.343,525.929S242.5,816.391,242.5,525.929,399.563,0,844.147,0Z" transform="translate(-242.499 12.571)" fill="url(#radial-gradient)"/>
+    <path id="Path_4" data-name="Path 4" d="M844.285,0c444.686,0,601.48,235.466,601.48,525.929s-156.795,525.929-601.48,525.929S242.5,816.391,242.5,525.929,399.6,0,844.285,0Z" transform="translate(474.235 12.571)" fill="url(#radial-gradient-2)"/>
+  </g>
+</svg>
