@@ -8,14 +8,20 @@
   font-weight: 200;
   border: 1px solid var(--main-text-color);
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .button.red {
+  border: 1px solid transparent;
   background-color: var(--accent-color-red);
-  border: none;
 }
 
 .button.blue {
+  border: 1px solid transparent;
   background-color: var(--accent-color-green);
-  border: none;
+}
+
+.button.red:hover,
+.button.blue:hover {
+  border: 1px solid var(--main-text-color);
 }
