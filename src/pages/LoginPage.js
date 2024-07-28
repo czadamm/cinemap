@@ -40,9 +40,6 @@ const LoginPage = ({ active }) => {
                       to="/sign-up"
                     >
                       Create it for free
-                      {/* <span>
-                        <i className="fa-solid fa-arrow-right-long"></i>
-                      </span> */}
                     </Link>
                   </p>
                 </div>
@@ -59,9 +56,6 @@ const LoginPage = ({ active }) => {
                       className={classes.blue}
                       to="/sign-in"
                     >
-                      {/* <span>
-                        <i className="fa-solid fa-arrow-left-long"></i>
-                      </span> */}
                       Sign-in
                     </Link>
                     if You already have an account.
