@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { fetchingMovie } from "../utils/fetching";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/layout/Spinner";
 import defaultImage from "../assets/person-default.png";
 
 import classes from "./MovieDetails.module.css";

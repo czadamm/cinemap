@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./Movies.module.css";
 import { fetchingMovies } from "../../utils/fetching";
 import Movie from "./MovieCard";
-import Spinner from "../Spinner";
+import Spinner from "../layout/Spinner";
 
 function Movies({
   activeCategories,

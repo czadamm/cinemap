@@ -2,7 +2,7 @@ import classes from "./Form.module.css";
 import Input from "./Input";
 
 import googleLogo from "../../assets/google.svg";
-import Button from "../Button";
+import Button from "../layout/Button";
 
 const Form = ({ signUp, signIn }) => {
   return (

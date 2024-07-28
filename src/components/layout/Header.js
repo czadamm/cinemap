@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 
 import classes from "./Header.module.css";
-import logoLight from "../assets/logo-light.svg";
+import logoLight from "../../assets/logo-light.svg";
 
 function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
