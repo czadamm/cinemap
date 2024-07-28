@@ -21,7 +21,12 @@
   background-color: var(--accent-color-green);
 }
 
-.button.red:hover,
+/* .button.red:hover,
 .button.blue:hover {
   border: 1px solid var(--main-text-color);
+} */
+
+.button:hover {
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
 }
