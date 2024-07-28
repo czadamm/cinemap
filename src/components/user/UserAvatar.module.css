@@ -1,0 +1,12 @@
+.avatar_container {
+  height: 100%;
+  width: 100%;
+  background-color: var(--card-color);
+}
+
+.avatar_container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}

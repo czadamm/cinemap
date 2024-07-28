@@ -1,0 +1,33 @@
+.user_menu_item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.user_menu_item:hover {
+  color: var(--accent-color-red);
+}
+
+.name {
+  font-size: inherit;
+}
+
+.avatar {
+  height: 4rem;
+  width: 4rem;
+  border: 2px solid;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.user_menu_item:hover > .avatar {
+  color: var(--accent-color-green);
+}

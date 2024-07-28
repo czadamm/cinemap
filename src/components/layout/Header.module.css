@@ -13,7 +13,6 @@
 .scrolled {
   height: 100px;
   background: rgba(33, 46, 56, 0.521);
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(19.6px);
   -webkit-backdrop-filter: blur(19.6px);
   -webkit-animation: show_bg 0.5s ease;
@@ -58,19 +57,25 @@
 }
 
 .nav_top {
+  position: relative;
   display: flex;
   align-items: center;
 }
 
 .nav_top ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 3rem;
 }
 
+.nav_top li {
+  font-size: 2rem;
+}
+
 .nav_top a {
   text-decoration: none;
-  font-size: 2rem;
+  font-size: inherit;
   color: var(--main-text-color);
   transition: 0.2s;
 }
@@ -90,4 +95,51 @@ a.button:hover {
   color: var(--main-text-color);
   border-color: transparent;
   background-color: var(--accent-color-red);
+}
+
+/* .user_button.active {
+  background-color: var(--card-color);
+  border-radius: 1px 1px 0 0;
+  box-shadow: 0 0 0 2rem var(--card-color);
+} */
+
+.user_nav {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 200px;
+  padding: 2rem;
+  background-color: var(--card-color);
+  border-radius: 11px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.336);
+}
+
+.user_nav ul {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logout_btn {
+  margin-top: 2rem;
+  color: var(--accent-color-red);
+}
+
+.user_nav a {
+  color: inherit;
+}
+
+.user_nav a:hover {
+  color: var(--accent-color-green);
+}
+
+.logout_btn a:hover {
+  color: var(--accent-color-red);
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+}
+
+.logout_btn span {
+  margin-left: 1rem;
 }

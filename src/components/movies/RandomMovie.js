@@ -7,7 +7,7 @@ function RandomMovie() {
     <div className={classes.random_movie}>
       <img
         className={classes.background_image}
-        src="https://image.tmdb.org/t/p/original/4ynQYtSEuU5hyipcGkfD6ncwtwz.jpg"
+        src="https://image.tmdb.org/t/p/original/nMnsSfNqMRJ5KujWMOnCS82Xklz.jpg"
         alt=""
       />
       <h1>Movie of the day</h1>
