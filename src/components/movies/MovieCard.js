@@ -4,7 +4,7 @@ import classes from "./MovieCard.module.css";
 function Movie({ id, image, title, year, rate }) {
   return (
     <li className={classes.movie_card}>
-      <Link to={"/movie/" + id} className={classes.movie}>
+      <Link to={"/movie/" + id + "/details"} className={classes.movie}>
         <img src={image} alt={title} />
         <div className={classes.movie_info}>
           <h3>{title}</h3>
