@@ -92,7 +92,7 @@
   flex-direction: column;
 }
 
-.rate_bg {
+/* .rate_bg {
   display: flex;
   height: 6rem;
   width: 6rem;
@@ -115,7 +115,7 @@
 .rate span {
   font-size: 1.7rem;
   font-weight: 500;
-}
+} */
 
 .movie_title {
   font-size: 3rem;
@@ -141,27 +141,41 @@
   font-weight: 100;
 }
 
-.genres {
+.movie_rating_row {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  gap: 1rem;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.rating {
+  display: block;
+  margin-right: 1rem;
+  padding: 5px 10px;
+  font-weight: 500;
+  font-size: 2.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.438);
+  border-radius: 5px;
+}
+
+.rating .icon {
+  margin-right: 1rem;
+  color: var(--favourite-color);
+}
+
+/* .genres_list {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
 
 .genres li {
-  padding-inline: 1rem;
   line-height: 100%;
   font-size: 2rem;
   font-weight: 100;
-  border-right: 1px solid rgb(148, 148, 148);
-}
-
-.genres li:first-child {
-  padding-left: 0;
-}
-
-.genres li:last-child {
-  border: none;
-}
+} */
 
 .info_row h3 {
   font-size: 2rem;

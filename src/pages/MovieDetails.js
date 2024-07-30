@@ -38,6 +38,9 @@ function MovieDetails() {
     // return <Error title="An error occured!" message={error.message} />;
   }
 
+  const genres = [];
+  movie?.data.genres.map((genre) => genres.push(genre.name));
+
   return (
     <>
       {isFetching && <Spinner />}
@@ -99,11 +102,11 @@ function MovieDetails() {
             </div>
             <div className={classes.right_info}>
               <div className={classes.top_info_row}>
-                <div className={classes.rate_bg}>
+                {/* <div className={classes.rate_bg}>
                   <div className={classes.rate}>
                     <span>{movie.data.vote_average.toFixed(1)}</span>
                   </div>
-                </div>
+                </div> */}
                 <div className={classes.title}>
                   {/* ====== MOVIE TITLE IMAGE ====== */}
                   {/* {movie.images.logos.length ? (
@@ -123,11 +126,19 @@ function MovieDetails() {
                     {movie.data.title}
                     <span>({movie.data.release_date.slice(0, 4)})</span>
                   </h2>
-                  <ul className={classes.genres}>
-                    {movie.data.genres.map((genre) => (
-                      <li key={genre.name}>{genre.name}</li>
-                    ))}
-                  </ul>
+                  <div className={classes.movie_rating_row}>
+                    <p className={classes.rating}>
+                      <span
+                        className={`${classes.icon} fa-solid fa-star`}
+                      ></span>
+                      {movie.data.vote_average.toFixed(1)}
+                    </p>
+                    <p className={classes.genres}>{genres.join(", ")}</p>
+                    <span>&#8226;</span>
+                    <p className={classes.time}>1h 30m</p>
+                    <span>&#8226;</span>
+                    <p className={classes.certification}>PG-13</p>
+                  </div>
                 </div>
               </div>
               <div className={classes.info_row}>
