@@ -10,18 +10,18 @@ const Form = ({ signUp, signIn }) => {
       <div className={classes.google_actions}>
         {signIn && (
           <button className={classes.google_button}>
-            Use Google to Sign in
             <span>
               <img src={googleLogo} alt="google logo" />
             </span>
+            Use Google to Sign in
           </button>
         )}
         {signUp && (
           <button className={classes.google_button}>
-            Use Google to Sign up
             <span>
               <img src={googleLogo} alt="google logo" />
             </span>
+            Use Google to Sign up
           </button>
         )}
       </div>
