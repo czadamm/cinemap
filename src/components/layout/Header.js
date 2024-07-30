@@ -10,6 +10,7 @@ function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
+  const userMenuButtonRef = useRef();
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -29,7 +30,7 @@ function Header() {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (userMenuRef.current && !userMenuRef.current.contains(e.target)) {
+      if (!userMenuRef.current?.contains(e.target)) {
         setIsUserMenuVisible(false);
       }
     };
@@ -61,7 +62,11 @@ function Header() {
               <Link to="upcoming">Upcoming</Link>
             </li>
             <li>
-              <UserButton name="" toggleFn={toggleUserMenu} />
+              <UserButton
+                ref={userMenuButtonRef}
+                name="Adam"
+                toggleFn={toggleUserMenu}
+              />
             </li>
             <li>
               <Link to="sign-in" className={classes.button}>
@@ -73,19 +78,27 @@ function Header() {
             <nav className={classes.user_nav} ref={userMenuRef}>
               <ul>
                 <li>
-                  <Link to="/user/my-account">Account</Link>
+                  <Link to="/user/my-account" onClick={toggleUserMenu}>
+                    Account
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/user/favourites">My Movies</Link>
+                  <Link to="/user/favourites" onClick={toggleUserMenu}>
+                    My Movies
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/user/settings">Settings</Link>
+                  <Link to="/user/settings" onClick={toggleUserMenu}>
+                    Settings
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/help">Help</Link>
+                  <Link to="/help" onClick={toggleUserMenu}>
+                    Help
+                  </Link>
                 </li>
                 <li className={classes.logout_btn}>
-                  <Link to="/user/logout">
+                  <Link to="/user/logout" onClick={toggleUserMenu}>
                     Logout
                     <span>
                       <i class="fa-solid fa-door-open"></i>
