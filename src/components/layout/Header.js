@@ -61,7 +61,7 @@ function Header() {
               <Link to="upcoming">Upcoming</Link>
             </li>
             <li>
-              <UserButton toggleFn={toggleUserMenu} />
+              <UserButton name="" toggleFn={toggleUserMenu} />
             </li>
             <li>
               <Link to="sign-in" className={classes.button}>
@@ -97,7 +97,6 @@ function Header() {
           )}
         </nav>
       </div>
-      <div className={classes.user_nav_wrapper}></div>
     </header>
   );
 }
