@@ -8,7 +8,7 @@ function ErrorPage() {
       <div className={classes.background_blur}>
         <Header />
         <main className={classes.main}>
-          <h2 className={classes.error_code}>404 Not found</h2>
+          <h2 className={classes.error_code}>Page Not found</h2>
           <p className={classes.error_message}>
             We couldn't load this page. Check an address or try again later{" "}
           </p>
