@@ -69,7 +69,9 @@ function Movies({
             key={movie.id}
             id={movie.id}
             title={movie.title}
-            year={movie.release_date}
+            year={
+              upcoming ? movie.release_date : movie.release_date.slice(0, 4)
+            }
             rate={movie.vote_average}
             image={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
           />

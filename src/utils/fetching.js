@@ -17,7 +17,7 @@ export async function fetchingMovies(
   cinema = false,
   upcoming = false,
   adult = false,
-  min_votes = 200,
+  min_votes = 500,
   page = 1
 ) {
   const listOFCategories = [...categories];

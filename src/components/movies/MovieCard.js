@@ -7,12 +7,15 @@ function Movie({ id, image, title, year, rate }) {
       <Link to={"/movie/" + id + "/details"} className={classes.movie}>
         <img src={image} alt={title} />
         <div className={classes.movie_info}>
+          <p className={classes.rating}>
+            <span className={`${classes.icon} fa-solid fa-star`}></span>
+            {rate.toFixed(1)}
+          </p>
           <h3>{title}</h3>
-          <p>{year.slice(0, 4)}</p>
+          <p>{year}</p>
         </div>
       </Link>
       <div className={classes.card_top}>
-        <div className={classes.rating}>{rate.toFixed(1)}</div>
         <button id="fav-btn" className={classes.favourite}>
           <i className="fa-regular fa-heart"></i>
         </button>
