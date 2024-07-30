@@ -6,6 +6,9 @@ import LoginPage from "./pages/LoginPage";
 import RootLayout from "./layouts/RootLayout";
 import ErrorPage from "./pages/errors/ErrorPage";
 import MovieDetails from "./pages/MovieDetails";
+import AccountPage from "./pages/user/AccountPage";
+import FavouritesPage from "./pages/user/FavouritesPage";
+import SettingsPage from "./pages/user/SettingsPage";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +20,19 @@ const router = createBrowserRouter([
       { path: "upcoming", element: <UpcomingPage /> },
       { path: "sign-in", element: <LoginPage active={true} /> },
       { path: "sign-up", element: <LoginPage active={false} /> },
-      { path: "movie/:id", element: <MovieDetails /> },
+      {
+        path: "movie",
+        children: [{ path: ":id/details", element: <MovieDetails /> }],
+      },
+      {
+        path: "user",
+        children: [
+          { path: "my-account", element: <AccountPage /> },
+          { path: "favourites", element: <FavouritesPage /> },
+          { path: "settings", element: <SettingsPage /> },
+          { path: "logout", action: null },
+        ],
+      },
     ],
     errorElement: <ErrorPage />,
   },
