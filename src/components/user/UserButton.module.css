@@ -22,12 +22,13 @@
 .avatar {
   height: 4rem;
   width: 4rem;
-  border: 2px solid;
+  border: 2px solid var(--main-text-color);
   border-radius: 50%;
   overflow: hidden;
   transition: 0.2s;
 }
 
 .user_menu_item:hover > .avatar {
-  color: var(--accent-color-green);
+  -webkit-filter: brightness(1.1);
+  filter: brightness(1.1);
 }

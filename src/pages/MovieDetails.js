@@ -102,11 +102,6 @@ function MovieDetails() {
             </div>
             <div className={classes.right_info}>
               <div className={classes.top_info_row}>
-                {/* <div className={classes.rate_bg}>
-                  <div className={classes.rate}>
-                    <span>{movie.data.vote_average.toFixed(1)}</span>
-                  </div>
-                </div> */}
                 <div className={classes.title}>
                   {/* ====== MOVIE TITLE IMAGE ====== */}
                   {/* {movie.images.logos.length ? (
@@ -131,13 +126,19 @@ function MovieDetails() {
                       <span
                         className={`${classes.icon} fa-solid fa-star`}
                       ></span>
-                      {movie.data.vote_average.toFixed(1)}
+                      {movie.data.vote_average > 0
+                        ? movie.data.vote_average.toFixed(1)
+                        : "NA"}
                     </p>
                     <p className={classes.genres}>{genres.join(", ")}</p>
                     <span>&#8226;</span>
-                    <p className={classes.time}>1h 30m</p>
+                    <p className={classes.time}>{`${Math.floor(
+                      movie.data.runtime / 60
+                    )}h ${movie.data.runtime % 60}m`}</p>
                     <span>&#8226;</span>
-                    <p className={classes.certification}>PG-13</p>
+                    <p className={classes.certification}>
+                      {movie.certification}
+                    </p>
                   </div>
                 </div>
               </div>

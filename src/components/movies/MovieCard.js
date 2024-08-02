@@ -9,7 +9,7 @@ function Movie({ id, image, title, year, rate }) {
         <div className={classes.movie_info}>
           <p className={classes.rating}>
             <span className={`${classes.icon} fa-solid fa-star`}></span>
-            {rate.toFixed(1)}
+            {rate > 0 ? rate.toFixed(1) : "No votes yet"}
           </p>
           <h3>{title}</h3>
           <p>{year}</p>

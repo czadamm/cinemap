@@ -1,7 +1,7 @@
 .avatar_container {
   height: 100%;
   width: 100%;
-  background-color: var(--card-color);
+  background-color: rgb(76, 136, 136);
 }
 
 .avatar_container img {
