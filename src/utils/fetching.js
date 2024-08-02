@@ -63,7 +63,12 @@ export async function fetchingMovies(
   return resData;
 }
 
-export async function fetchingMovie(id, lang = "en", region = "en-US") {
+export async function fetchingMovie(
+  id,
+  lang = "en",
+  region = "en-US",
+  country = "US"
+) {
   const movie = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
     options
@@ -79,11 +84,46 @@ export async function fetchingMovie(id, lang = "en", region = "en-US") {
     options
   );
 
+  const releases = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/release_dates`,
+    options
+  );
+
   const movieData = await movie.json();
   const creditsData = await credits.json();
   const imagesData = await images.json();
+  const releasesData = await releases.json();
 
-  const resData = { data: movieData, credits: creditsData, images: imagesData };
+  console.log(releasesData);
+
+  let filteredReleases;
+  let certification = [{ certification: "NA" }];
+
+  if (releasesData.results.length) {
+    filteredReleases = releasesData.results.filter(
+      (result) => result.iso_3166_1 === country
+    );
+
+    if (filteredReleases.length) {
+      const filteredCertification = filteredReleases[0].release_dates.filter(
+        (release) => release.certification !== ""
+      );
+
+      if (filteredCertification.length) {
+        certification = filteredCertification;
+      }
+      console.log("certification", certification);
+    }
+  }
+
+  console.log(certification);
+
+  const resData = {
+    data: movieData,
+    credits: creditsData,
+    images: imagesData,
+    certification: certification[0].certification,
+  };
 
   console.log(resData);
 
