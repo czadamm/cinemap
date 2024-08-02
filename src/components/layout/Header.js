@@ -10,7 +10,6 @@ function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
-  const userMenuButtonRef = useRef();
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -62,11 +61,7 @@ function Header() {
               <Link to="upcoming">Upcoming</Link>
             </li>
             <li>
-              <UserButton
-                ref={userMenuButtonRef}
-                name="Adam"
-                toggleFn={toggleUserMenu}
-              />
+              <UserButton name="Adam" toggleFn={toggleUserMenu} />
             </li>
             <li>
               <Link to="sign-in" className={classes.button}>
