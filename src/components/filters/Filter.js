@@ -1,13 +1,20 @@
 import classes from "./Filter.module.css";
 import FilterItem from "./FilterItem";
 
-function Filter({ title, filterList, activeCategories, onSelect, byTitle }) {
+function Filter({
+  title,
+  filterList,
+  activeCategories,
+  onSelect,
+  onClear,
+  byTitle,
+}) {
   return (
     <div className={classes.filter}>
-      <h2>{title}</h2>
-      <div className={classes.clear_filter}>
+      <h3>{title}</h3>
+      <button className={classes.clear_filter} onClick={onClear}>
         <i className="fa-solid fa-filter-circle-xmark"></i>
-      </div>
+      </button>
       {filterList && (
         <ul className={classes.filters_list}>
           {filterList.map((filterItem) => (

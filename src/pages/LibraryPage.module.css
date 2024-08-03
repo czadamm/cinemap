@@ -1,0 +1,9 @@
+.content_wrapper {
+  padding-top: 150px;
+}
+
+.section_title {
+  display: flex;
+  margin-block: 5rem;
+  padding-inline: var(--main-padding);
+}

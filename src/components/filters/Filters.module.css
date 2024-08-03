@@ -1,29 +1,30 @@
 .filters_section {
   margin-inline: auto;
-  margin-top: 150px;
-  margin-bottom: 2rem;
-  padding-inline: 10rem;
-  width: 100%;
+  width: auto;
   max-width: var(--max-width);
   overflow: hidden;
 }
 
-.filters_section h1 {
-  font-size: 2rem;
+.filters_section h2 {
+  font-size: 3.1rem;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(34, 48, 59, 0.384);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
 .toggle {
   display: block;
-  width: 100px;
+  width: 150px;
   position: relative;
-  margin-bottom: 2rem;
   cursor: pointer;
 }
 
 .toggle::after {
   position: absolute;
   content: "";
-  top: 12px;
+  top: 1.8rem;
   right: 0px;
   width: 0;
   height: 0;
@@ -39,7 +40,7 @@
 }
 
 .filters {
-  padding-bottom: 1rem;
+  padding-top: 1rem;
   max-height: 0;
   opacity: 0;
   transition: all 0.2s;

@@ -11,14 +11,14 @@ function Filters(props) {
 
   return (
     <section className={classes.filters_section}>
-      <h1
+      <h2
         onClick={toggleFilters}
         className={
           !active ? classes.toggle : `${classes.toggle} ${classes.active}`
         }
       >
         Filters
-      </h1>
+      </h2>
       <div
         className={
           !active ? classes.filters : `${classes.filters} ${classes.active}`
@@ -28,6 +28,7 @@ function Filters(props) {
           filterList={props.categories}
           activeCategories={props.activeCategories}
           onSelect={props.onUpdate}
+          onClear={props.onClear}
           title="Categories"
         />
         <Filter byTitle title="Find By Title" />

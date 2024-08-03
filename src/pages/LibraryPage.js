@@ -4,6 +4,9 @@ import Movies from "../components/movies/Movies";
 import { LANGUAGES } from "../utils/tmdb";
 import { CATEGORIES } from "../utils/tmdb";
 
+import classes from "./LibraryPage.module.css";
+import Title from "../components/layout/Title";
+
 function LibraryPage() {
   const [activeCategories, setActiveCategories] = useState(
     JSON.parse(localStorage.getItem("categories")) || []
@@ -22,15 +25,24 @@ function LibraryPage() {
     localStorage.setItem("categories", JSON.stringify(updatedCategories));
   };
 
+  const clearCategories = () => {
+    setActiveCategories([]);
+    localStorage.removeItem("categories");
+  };
+
   return (
-    <>
-      <Filters
-        categories={CATEGORIES}
-        activeCategories={activeCategories}
-        onUpdate={toggleCategories}
-      />
+    <div className={classes.content_wrapper}>
+      <div className={classes.section_title}>
+        <Title>Library</Title>
+        <Filters
+          categories={CATEGORIES}
+          activeCategories={activeCategories}
+          onUpdate={toggleCategories}
+          onClear={clearCategories}
+        />
+      </div>
       <Movies activeCategories={activeCategories} lang={LANGUAGES.us.lang} />
-    </>
+    </div>
   );
 }
 
