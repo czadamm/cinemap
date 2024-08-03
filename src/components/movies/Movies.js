@@ -61,7 +61,7 @@ function Movies({
   }
 
   return (
-    <section className={`${classes.movies} ${upcoming && classes.padded_top}`}>
+    <section className={classes.movies}>
       {isFetching && <Spinner />}
       <ul className={`${customClass} ${isFetching && classes.fetching}`}>
         {movies.map((movie) => (

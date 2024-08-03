@@ -4,7 +4,7 @@
   display: flex;
   top: 0;
   left: 0;
-  height: 150px;
+  height: 15rem;
   width: 100vw;
   align-items: center;
   transition: all 0.5s;
@@ -21,24 +21,24 @@
 
 @-webkit-keyframes show_bg {
   from {
-    height: 150px;
+    height: 15rem;
     background: rgba(33, 46, 56, 0);
   }
 
   to {
-    height: 100px;
+    height: 10rem;
     background: rgba(33, 46, 56, 0.521);
   }
 }
 
 @keyframes show_bg {
   from {
-    height: 150px;
+    height: 15rem;
     background: rgba(33, 46, 56, 0);
   }
 
   to {
-    height: 100px;
+    height: 10rem;
     background: rgba(33, 46, 56, 0.521);
   }
 }
@@ -53,7 +53,7 @@
 }
 
 .nav_wrapper img {
-  width: 150px;
+  width: 15rem;
 }
 
 .nav_top {
@@ -105,12 +105,11 @@ a.button:hover {
 
 .user_nav {
   position: absolute;
-  top: 45px;
+  top: 4.5rem;
   right: 0;
-  width: 200px;
+  width: 20rem;
   padding: 2rem;
-  background-color: rgba(52, 73, 94, 0.952);
-  border-radius: 11px;
+  background-color: var(--background-color);
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.336);
   opacity: 1;
   -webkit-animation: show_nav 0.2s ease-in;

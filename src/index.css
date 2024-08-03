@@ -16,7 +16,7 @@
   --max-width: 1920px;
   --main-padding: 5vw;
 
-  font-size: 10px;
+  font-size: min(0.7vw, 10px);
   font-weight: 300;
   color: var(--main-text-color);
 }

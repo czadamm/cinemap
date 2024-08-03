@@ -18,7 +18,10 @@
 }
 
 .main {
-  margin-top: 150px;
+  flex-grow: 1;
+}
+
+.content_wrapper {
   height: 100%;
   width: 100%;
   display: flex;

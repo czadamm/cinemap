@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   gap: 6rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-inline: auto;
   padding-inline: 10rem;
   padding-block: 2rem;
@@ -28,8 +28,8 @@
 }
 
 .tmdb_logo img {
-  width: 80px;
-  height: 80px;
+  width: 8rem;
+  height: 8rem;
   -o-object-fit: contain;
   object-fit: contain;
 }
