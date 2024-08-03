@@ -5,15 +5,9 @@
   padding-block: 1rem;
 }
 
-.section h2 {
+.section_title {
   margin-bottom: 1.5rem;
   padding-inline: var(--main-padding);
-  font-size: 3.1rem;
-  text-align: left;
-  text-transform: uppercase;
-  color: rgba(34, 48, 59, 0.384);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
 .rank {

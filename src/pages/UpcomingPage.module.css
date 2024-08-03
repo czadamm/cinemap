@@ -1,0 +1,8 @@
+.content_wrapper {
+  padding-top: 150px;
+}
+
+.section_title {
+  margin-block: 5rem;
+  padding-inline: var(--main-padding);
+}
