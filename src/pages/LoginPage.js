@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Form from "../components/login/Form";
+import SignForm from "../components/forms/SignForm";
 import classes from "./LoginPage.module.css";
 import { useState } from "react";
 import BgWrapper from "../components/layout/BgWrapper";
@@ -17,10 +17,10 @@ const LoginPage = ({ active }) => {
       <div className={classes.content_wrapper}>
         <div className={`${classes.container} ${activeMode && classes.active}`}>
           <div className={`${classes.form_container} ${classes.sign_up}`}>
-            <Form signUp />
+            <SignForm signUp />
           </div>
           <div className={`${classes.form_container} ${classes.sign_in}`}>
-            <Form signIn />
+            <SignForm signIn />
           </div>
           <div className={classes.toggle_container}>
             <div className={classes.toggle}>
