@@ -1,6 +1,6 @@
-import classes from "./Input.module.css";
+import classes from "./SignInput.module.css";
 
-const Input = ({ name, children, type, error }) => {
+const SignInput = ({ name, children, type, error }) => {
   return (
     <div className={classes.input_group}>
       <input
@@ -18,4 +18,4 @@ const Input = ({ name, children, type, error }) => {
   );
 };
 
-export default Input;
+export default SignInput;

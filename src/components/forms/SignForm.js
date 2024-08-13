@@ -1,10 +1,10 @@
-import classes from "./Form.module.css";
-import Input from "./Input";
+import classes from "./SignForm.module.css";
+import SignInput from "./SignInput";
 
 import googleLogo from "../../assets/google.svg";
 import Button from "../layout/Button";
 
-const Form = ({ signUp, signIn }) => {
+const SignForm = ({ signUp, signIn }) => {
   return (
     <>
       <div className={classes.google_actions}>
@@ -34,22 +34,21 @@ const Form = ({ signUp, signIn }) => {
         <p className={classes.message_between}>Or use Cinemap account:</p>
       )}
       <form className={classes.form} action="">
-        <Input name="email" type="email">
+        <SignInput name="email" type="email">
           Email
-        </Input>
-        <Input name="password" type="password">
+        </SignInput>
+        <SignInput name="password" type="password">
           Password
-        </Input>
-
+        </SignInput>
         {signUp && (
-          <Input name="name" type="text">
+          <SignInput name="name" type="text">
             Name
-          </Input>
+          </SignInput>
         )}
         {signUp && (
-          <Input name="birth" type="text">
+          <SignInput name="birth" type="text">
             Date of birth
-          </Input>
+          </SignInput>
         )}
         <div className={classes.actions}>
           {signIn && <Button color="blue">Enter</Button>}
@@ -60,4 +59,4 @@ const Form = ({ signUp, signIn }) => {
   );
 };
 
-export default Form;
+export default SignForm;
