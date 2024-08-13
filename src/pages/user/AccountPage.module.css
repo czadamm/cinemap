@@ -1,0 +1,73 @@
+.content_wrapper {
+  padding-top: 15rem;
+  padding-inline: var(--main-padding);
+}
+
+.section_title {
+  padding-top: 5rem;
+}
+
+.profile {
+  display: flex;
+  margin-top: 4rem;
+  margin-inline: auto;
+  padding: 3rem;
+  width: min(70vw, 1180px);
+  height: 18vw;
+  background-color: rgba(255, 255, 255, 0.047);
+  border-radius: 300px;
+}
+
+.left_side {
+  display: flex;
+  width: 35%;
+}
+
+.avatar {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 1.5rem rgba(0, 119, 138, 0.43);
+  background-color: rgba(0, 119, 138, 0.43);
+  border-radius: 50%;
+}
+
+.avatar_change_button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  color: var(--main-text-color);
+  font-size: 2rem;
+  font-weight: 300;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(36, 86, 94, 0.616);
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.avatar_change_button:hover {
+  opacity: 1;
+}
+
+.right_side {
+  display: flex;
+  width: 65%;
+}
+
+.user_info {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  padding-left: 5rem;
+}
+
+.user_info form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.5rem;
+  justify-content: center;
+}

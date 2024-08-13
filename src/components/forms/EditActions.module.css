@@ -1,0 +1,41 @@
+.edit_actions {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background-color: #ff0000;
+}
+
+.edit_button,
+.save_button,
+.cancel_button {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.cancel_button {
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(-110%);
+}
+
+.edit_button:hover,
+.save_button:hover {
+  color: var(--accent-color-green);
+}
+
+.cancel_button:hover {
+  color: var(--accent-color-red);
+}
