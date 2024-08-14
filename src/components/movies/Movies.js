@@ -66,6 +66,7 @@ function Movies({
       <ul className={`${customClass} ${isFetching && classes.fetching}`}>
         {movies.map((movie) => (
           <Movie
+            upcoming={upcoming}
             key={movie.id}
             id={movie.id}
             title={movie.title}

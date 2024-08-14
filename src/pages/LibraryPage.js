@@ -6,6 +6,7 @@ import { CATEGORIES } from "../utils/tmdb";
 
 import classes from "./LibraryPage.module.css";
 import Title from "../components/layout/Title";
+import BgWrapper from "../components/layout/BgWrapper";
 
 function LibraryPage() {
   const [activeCategories, setActiveCategories] = useState(
@@ -31,18 +32,21 @@ function LibraryPage() {
   };
 
   return (
-    <div className={classes.content_wrapper}>
-      <div className={classes.section_title}>
-        <Title>Library</Title>
-        <Filters
-          categories={CATEGORIES}
-          activeCategories={activeCategories}
-          onUpdate={toggleCategories}
-          onClear={clearCategories}
-        />
+    <>
+      <BgWrapper />
+      <div className={classes.content_wrapper}>
+        <div className={classes.section_title}>
+          <Title>Library</Title>
+          <Filters
+            categories={CATEGORIES}
+            activeCategories={activeCategories}
+            onUpdate={toggleCategories}
+            onClear={clearCategories}
+          />
+        </div>
+        <Movies activeCategories={activeCategories} lang={LANGUAGES.us.lang} />
       </div>
-      <Movies activeCategories={activeCategories} lang={LANGUAGES.us.lang} />
-    </div>
+    </>
   );
 }
 

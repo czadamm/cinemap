@@ -14,7 +14,7 @@ const AccountPage = () => {
     setIsInEdit(!isInEdit);
   };
 
-  const changeAvatar = () => {
+  const handleChangeAvatar = () => {
     filePickerRef.current.click();
   };
 
@@ -30,7 +30,7 @@ const AccountPage = () => {
             <div className={classes.avatar}>
               {isInEdit && (
                 <button
-                  onClick={changeAvatar}
+                  onClick={handleChangeAvatar}
                   className={classes.avatar_change_button}
                 >
                   Change Avatar

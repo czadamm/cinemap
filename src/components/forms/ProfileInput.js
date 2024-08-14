@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./ProfileInput.module.css";
 
-const ProfileInput = ({ name, value, inEdit, children, type, error }) => {
+const ProfileInput = ({ name, value, type, inEdit, children }) => {
   const [inputValue, setInputValue] = useState(value);
 
   const handleInputChange = (e) => {

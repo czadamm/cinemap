@@ -11,9 +11,9 @@ const options = {
 
 export async function fetchingMovies(
   categories = [],
-  lang = "en-US",
+  lang = "pl-PL",
   provider = "",
-  region = "us",
+  region = "pl",
   cinema = false,
   upcoming = false,
   adult = false,
@@ -65,9 +65,9 @@ export async function fetchingMovies(
 
 export async function fetchingMovie(
   id,
-  lang = "en",
-  region = "en-US",
-  country = "US"
+  lang = "pl",
+  region = "pl-PL",
+  country = "PL"
 ) {
   const movie = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
@@ -130,7 +130,7 @@ export async function fetchingMovie(
   return resData;
 }
 
-export async function fetchingGenres(lang = "en-US") {
+export async function fetchingGenres(lang = "pl-PL") {
   const response = await fetch(
     `https://api.themoviedb.org/3/genre/movie/list?language=${lang}`,
     options
