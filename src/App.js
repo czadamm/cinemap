@@ -7,7 +7,7 @@ import RootLayout from "./layouts/RootLayout";
 import ErrorPage from "./pages/errors/ErrorPage";
 import MovieDetails from "./pages/MovieDetails";
 import AccountPage from "./pages/user/AccountPage";
-import FavouritesPage from "./pages/user/FavouritesPage";
+import MyMoviesPage from "./pages/user/MyMoviesPage";
 import SettingsPage from "./pages/user/SettingsPage";
 
 const router = createBrowserRouter([
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         path: "user",
         children: [
           { path: "my-account", element: <AccountPage /> },
-          { path: "favourites", element: <FavouritesPage /> },
+          { path: "favourites", element: <MyMoviesPage /> },
           { path: "settings", element: <SettingsPage /> },
           { path: "logout", action: null },
         ],

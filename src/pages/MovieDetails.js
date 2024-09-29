@@ -6,6 +6,7 @@ import defaultImage from "../assets/person-default.png";
 
 import classes from "./MovieDetails.module.css";
 import CreditsCard from "../components/movies/CreditsCard";
+import BgWrapper from "../components/layout/BgWrapper";
 
 function MovieDetails() {
   const params = useParams();
@@ -43,7 +44,12 @@ function MovieDetails() {
 
   return (
     <>
-      {isFetching && <Spinner />}
+      {isFetching && (
+        <>
+          <BgWrapper />
+          <Spinner />
+        </>
+      )}
       {movie && (
         <article className={classes.movie_details}>
           <div className={classes.backdrop}>

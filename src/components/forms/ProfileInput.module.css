@@ -5,10 +5,10 @@
 }
 
 .input {
-  height: 5.5rem;
+  height: 5rem;
   width: 100%;
   padding-inline: 3rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 200;
   color: var(--main-text-color);
   background: rgba(12, 12, 12, 0.14);
@@ -30,38 +30,6 @@
 }
 
 .label {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   width: 20rem;
-}
-
-.input:focus ~ .label {
-  color: var(--main-text-color);
-}
-
-.input:focus ~ .label,
-.input:not(:placeholder-shown) ~ .label {
-  position: absolute;
-  top: -1rem;
-  left: 1rem;
-  font-size: 1.2rem;
-}
-
-.input::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.input::-moz-placeholder {
-  color: transparent;
-}
-
-.input:-ms-input-placeholder {
-  color: transparent;
-}
-
-.input::-ms-input-placeholder {
-  color: transparent;
-}
-
-.input::placeholder {
-  color: transparent;
 }

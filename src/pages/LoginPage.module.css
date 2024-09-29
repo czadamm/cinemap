@@ -82,7 +82,7 @@
   overflow: hidden;
   transition: all 0.6s ease-in-out;
   border-radius: 360px 11px 11px 360px;
-  z-index: 1000;
+  z-index: 99;
 }
 
 .container.active .toggle_container {

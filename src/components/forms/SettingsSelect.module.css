@@ -1,0 +1,21 @@
+.input_group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input_group label {
+  width: 13rem;
+  font-size: 1.5rem;
+}
+
+.input_group select {
+  height: 5rem;
+  width: 24rem;
+  color: var(--main-text-color);
+  text-align: center;
+  border: none;
+  border-radius: 11px;
+  background-color: rgba(0, 0, 0, 0.102);
+}
