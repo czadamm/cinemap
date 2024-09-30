@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import SignForm from "../components/forms/SignForm";
-import classes from "./LoginPage.module.css";
-import { useState } from "react";
-import BgWrapper from "../components/layout/BgWrapper";
+import { Link } from 'react-router-dom';
+import classes from './LoginPage.module.css';
+import { useState } from 'react';
+import BgWrapper from '../components/layout/BgWrapper';
+import RegisterForm from '../components/forms/RegisterForm';
+import LoginForm from '../components/forms/LoginForm';
 
 const LoginPage = ({ active }) => {
   const [activeMode, setActiveMode] = useState(active);
@@ -17,10 +18,10 @@ const LoginPage = ({ active }) => {
       <div className={classes.content_wrapper}>
         <div className={`${classes.container} ${activeMode && classes.active}`}>
           <div className={`${classes.form_container} ${classes.sign_up}`}>
-            <SignForm signUp />
+            <RegisterForm />
           </div>
           <div className={`${classes.form_container} ${classes.sign_in}`}>
-            <SignForm signIn />
+            <LoginForm />
           </div>
           <div className={classes.toggle_container}>
             <div className={classes.toggle}>

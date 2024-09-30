@@ -1,4 +1,4 @@
-import classes from "./SignInput.module.css";
+import classes from './SignInput.module.css';
 
 const SignInput = ({ name, children, type, error }) => {
   return (
@@ -14,6 +14,14 @@ const SignInput = ({ name, children, type, error }) => {
       <label className={classes.label} htmlFor={name}>
         {children}
       </label>
+      {error && (
+        <div className={classes.error}>
+          <p>{error.message}</p>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

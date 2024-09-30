@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  padding-inline: 0.7rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.message_between {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-text-color);
+  opacity: 0.6;
+}
