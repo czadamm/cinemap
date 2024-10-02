@@ -17,7 +17,7 @@
 
 .backdrop::after {
   z-index: 1;
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -33,7 +33,7 @@
 .container {
   display: flex;
   margin-inline: auto;
-  margin-top: 230px;
+  margin-top: 23rem;
   padding-inline: var(--main-padding);
   width: 100%;
   max-width: 1500px;
@@ -50,20 +50,20 @@
   margin-bottom: 2rem;
   height: calc(17vw * 1.5);
   width: 17vw;
-  border-radius: 11px;
+  border-radius: 1.1rem;
   background-color: var(--card-color);
 }
 
 .poster::before {
   z-index: -1;
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -5px);
+  transform: translate(-50%, -0.5rem);
   height: 0;
   width: 80%;
-  box-shadow: 0 0 28px 15px rgb(0, 0, 0);
+  box-shadow: 0 0 2.8rem 1.5rem rgb(0, 0, 0);
 }
 
 .poster img {
@@ -71,7 +71,7 @@
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 11px;
+  border-radius: 1.1rem;
 }
 
 .right_info {
@@ -129,11 +129,11 @@
 .rating {
   display: block;
   margin-right: 1rem;
-  padding: 5px 10px;
+  padding: 0.5rem 1rem;
   font-weight: 500;
   font-size: 2.4rem;
   border: 1px solid rgba(255, 255, 255, 0.438);
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .rating .icon {
@@ -157,11 +157,11 @@
 }
 
 .info_row ul li::after {
-  content: ", ";
+  content: ', ';
 }
 
 .info_row ul li:last-child::after {
-  content: "";
+  content: '';
 }
 
 .providers {
@@ -171,7 +171,7 @@
 }
 
 .providers li {
-  height: 60px;
+  height: 6rem;
 }
 
 .providers li img {
@@ -179,7 +179,7 @@
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 11px;
+  border-radius: 1.1rem;
 }
 
 .credits_list {

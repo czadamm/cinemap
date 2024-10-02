@@ -1,22 +1,15 @@
 import classes from './SignInput.module.css';
 
-const SignInput = ({ name, children, type, error }) => {
+const SignInput = ({ label, name, error, ...props }) => {
   return (
     <div className={classes.input_group}>
-      <input
-        className={classes.input}
-        id={name}
-        name={name}
-        type={type}
-        placeholder=""
-        required
-      />
+      <input className={classes.input} id={name} {...props} placeholder="" />
       <label className={classes.label} htmlFor={name}>
-        {children}
+        {label}
       </label>
       {error && (
         <div className={classes.error}>
-          <p>{error.message}</p>
+          <p>{error}</p>
           <div>
             <i class="fa-solid fa-triangle-exclamation"></i>
           </div>

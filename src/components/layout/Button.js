@@ -1,16 +1,8 @@
 import classes from './Button.module.css';
 
-const Button = ({ color, onClick, children }) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    onClick();
-  };
-
+const Button = ({ color, children }) => {
   return (
-    <button
-      className={`${classes.button} ${classes[color]}`}
-      onClick={handleClick}
-    >
+    <button className={`${classes.button} ${classes[color]}`}>
       {children}
     </button>
   );

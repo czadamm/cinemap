@@ -1,4 +1,4 @@
-import classes from './LoginForm.module.css';
+import classes from './RegisterForm.module.css';
 import SignInput from './SignInput';
 import Button from '../layout/Button';
 import GoogleButton from '../layout/GoogleButton';
@@ -14,23 +14,18 @@ const RegisterForm = () => {
       <p className={classes.message_between}>
         Or create an account using form below:
       </p>
-      <form className={classes.form} action="">
-        <SignInput name="email" type="email">
-          Email
-        </SignInput>
-        <SignInput name="password" type="password">
-          Password
-        </SignInput>
-        <SignInput name="name" type="text">
-          Name
-        </SignInput>
-        <SignInput name="birth" type="text">
-          Date of birth
-        </SignInput>
+      <form className={classes.form} onSubmit={handleRegister}>
+        <SignInput name="email" label="Email" />
+        <SignInput name="password" type="password" label="Password" />
+        <SignInput name="name" type="text" label="Name" />
+        <SignInput name="birth" type="text" label="Date of birth" />
+        <p className={classes.agreement}>
+          By clicking Create, you agree to our{' '}
+          <a href="/terms-of-use">Terms of Use</a> and{' '}
+          <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
         <div className={classes.actions}>
-          <Button color="red" onClick={handleRegister}>
-            Create
-          </Button>
+          <Button color="red">Create</Button>
         </div>
       </form>
     </>

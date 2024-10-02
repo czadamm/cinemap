@@ -25,3 +25,22 @@
   color: var(--main-text-color);
   opacity: 0.6;
 }
+
+.agreement {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: var(--accent-color-red);
+  -webkit-filter: brightness(1.01);
+  filter: brightness(1.01);
+  border-bottom: 1px solid;
+  transition: 0.2s;
+}
+
+.agreement a:hover {
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+}

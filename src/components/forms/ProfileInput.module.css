@@ -12,11 +12,10 @@
   font-weight: 200;
   color: var(--main-text-color);
   background: rgba(12, 12, 12, 0.14);
-  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.171),
-    inset 0px -2px 4px 0px rgba(223, 223, 223, 0.123);
+  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.171);
   border-radius: 7px;
   border: none;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .input:disabled {

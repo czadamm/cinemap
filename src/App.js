@@ -1,36 +1,38 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import LibraryPage from "./pages/LibraryPage";
-import HomePage from "./pages/HomePage";
-import UpcomingPage from "./pages/UpcomingPage";
-import LoginPage from "./pages/LoginPage";
-import RootLayout from "./layouts/RootLayout";
-import ErrorPage from "./pages/errors/ErrorPage";
-import MovieDetails from "./pages/MovieDetails";
-import AccountPage from "./pages/user/AccountPage";
-import MyMoviesPage from "./pages/user/MyMoviesPage";
-import SettingsPage from "./pages/user/SettingsPage";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import LibraryPage from './pages/LibraryPage';
+import HomePage from './pages/HomePage';
+import UpcomingPage from './pages/UpcomingPage';
+import LoginPage from './pages/LoginPage';
+import RootLayout from './layouts/RootLayout';
+import ErrorPage from './pages/errors/ErrorPage';
+import MovieDetails from './pages/MovieDetails';
+import AccountPage from './pages/user/AccountPage';
+import MyMoviesPage from './pages/user/MyMoviesPage';
+import SettingsPage from './pages/user/SettingsPage';
+import HelpPage from './pages/HelpPage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "library", element: <LibraryPage /> },
-      { path: "upcoming", element: <UpcomingPage /> },
-      { path: "sign-in", element: <LoginPage active={true} /> },
-      { path: "sign-up", element: <LoginPage active={false} /> },
+      { path: 'library', element: <LibraryPage /> },
+      { path: 'upcoming', element: <UpcomingPage /> },
+      { path: 'help', element: <HelpPage /> },
+      { path: 'sign-in', element: <LoginPage active={true} /> },
+      { path: 'sign-up', element: <LoginPage active={false} /> },
       {
-        path: "movie",
-        children: [{ path: ":id/details", element: <MovieDetails /> }],
+        path: 'movie',
+        children: [{ path: ':id/details', element: <MovieDetails /> }],
       },
       {
-        path: "user",
+        path: 'user',
         children: [
-          { path: "my-account", element: <AccountPage /> },
-          { path: "favourites", element: <MyMoviesPage /> },
-          { path: "settings", element: <SettingsPage /> },
-          { path: "logout", action: null },
+          { path: 'my-account', element: <AccountPage /> },
+          { path: 'favourites', element: <MyMoviesPage /> },
+          { path: 'settings', element: <SettingsPage /> },
+          { path: 'logout', action: null },
         ],
       },
     ],

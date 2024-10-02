@@ -25,3 +25,17 @@
   color: var(--main-text-color);
   opacity: 0.6;
 }
+
+.forgottenPassword {
+  margin-top: 0.4rem;
+  color: var(--accent-color-green);
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.forgottenPassword:hover {
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+}

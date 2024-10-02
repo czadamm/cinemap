@@ -20,6 +20,7 @@
   border: none;
   font-family: 'Noto Sans', sans-serif;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .google_button span {
@@ -27,6 +28,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.google_button img {
+  width: 3rem;
 }
 
 .google_button:hover {

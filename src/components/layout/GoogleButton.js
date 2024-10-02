@@ -8,7 +8,7 @@ const GoogleButton = ({ children }) => {
         <span>
           <img src={googleLogo} alt="google logo" />
         </span>
-        Use Google to Sign in
+        {children}
       </button>
     </div>
   );
