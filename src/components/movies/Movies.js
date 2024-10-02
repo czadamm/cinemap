@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import classes from "./Movies.module.css";
-import { fetchingMovies } from "../../utils/fetching";
-import Movie from "./MovieCard";
-import Spinner from "../layout/Spinner";
+import { useEffect, useState } from 'react';
+import classes from './Movies.module.css';
+import { fetchingByTitle, fetchingMovies } from '../../utils/fetching';
+import Movie from './MovieCard';
+import Spinner from '../layout/Spinner';
 
 function Movies({
+  titleQuery,
   activeCategories,
   lang,
   provider,
@@ -22,31 +23,58 @@ function Movies({
     async function fetchMovies() {
       setIsFetching(true);
 
-      try {
-        const fetchedResult = await fetchingMovies(
-          activeCategories,
-          lang,
-          provider,
-          region,
-          cinema,
-          upcoming,
-          min_votes
-        );
-        const movies = fetchedResult.results;
+      let fetchedResult = null;
 
-        setMovies(movies);
-        setIsFetching(false);
-      } catch (error) {
-        setError({
-          message:
-            error.message || "Could not fetch movies, please try again later",
-        });
-        setIsFetching(false);
+      if (titleQuery) {
+        try {
+          fetchedResult = await fetchingByTitle(titleQuery);
+          const movies = fetchedResult.results;
+
+          setMovies(movies);
+          setIsFetching(false);
+        } catch (error) {
+          setError({
+            message:
+              error.message || 'Could not fetch movies, please try again later',
+          });
+          setIsFetching(false);
+        }
+      } else {
+        try {
+          fetchedResult = await fetchingMovies(
+            activeCategories,
+            lang,
+            provider,
+            region,
+            cinema,
+            upcoming,
+            min_votes
+          );
+          const movies = fetchedResult.results;
+
+          setMovies(movies);
+          setIsFetching(false);
+        } catch (error) {
+          setError({
+            message:
+              error.message || 'Could not fetch movies, please try again later',
+          });
+          setIsFetching(false);
+        }
       }
     }
 
     fetchMovies();
-  }, [activeCategories, cinema, lang, min_votes, provider, region, upcoming]);
+  }, [
+    activeCategories,
+    cinema,
+    lang,
+    min_votes,
+    provider,
+    region,
+    titleQuery,
+    upcoming,
+  ]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;
@@ -71,7 +99,11 @@ function Movies({
             id={movie.id}
             title={movie.title}
             year={
-              upcoming ? movie.release_date : movie.release_date.slice(0, 4)
+              movie.release_date
+                ? upcoming
+                  ? movie.release_date
+                  : movie.release_date.slice(0, 4)
+                : ''
             }
             rate={movie.vote_average}
             image={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}

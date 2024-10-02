@@ -1,19 +1,19 @@
 const authKey =
-  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDEwOGRiY2EyNDVjNmY2MzRiY2M4ZWZjMjRmZjkyZiIsInN1YiI6IjY1ODBjNGI1ZGY4NmE4MDhkYWU4M2RiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LoH_Z-h_dAEYKEev9ZmXTiOnrl80R5lk6VDmfUSGtD8";
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDEwOGRiY2EyNDVjNmY2MzRiY2M4ZWZjMjRmZjkyZiIsInN1YiI6IjY1ODBjNGI1ZGY4NmE4MDhkYWU4M2RiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LoH_Z-h_dAEYKEev9ZmXTiOnrl80R5lk6VDmfUSGtD8';
 
 const options = {
-  method: "GET",
+  method: 'GET',
   headers: {
-    accept: "application/json",
+    accept: 'application/json',
     Authorization: authKey,
   },
 };
 
 export async function fetchingMovies(
   categories = [],
-  lang = "pl-PL",
-  provider = "",
-  region = "pl",
+  lang = 'pl-PL',
+  provider = '',
+  region = 'pl',
   cinema = false,
   upcoming = false,
   adult = false,
@@ -36,7 +36,7 @@ export async function fetchingMovies(
         options
       );
 
-      console.log("upcoming");
+      console.log('upcoming');
     } else {
       response = await fetch(
         `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}`,
@@ -46,7 +46,7 @@ export async function fetchingMovies(
   } else {
     response = await fetch(
       `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}&with_genres=${listOFCategories.join(
-        "%2C"
+        '%2C'
       )}`,
       options
     );
@@ -55,7 +55,7 @@ export async function fetchingMovies(
   const resData = await response.json();
 
   if (!response.ok) {
-    throw new Error("Failed to fetch movies");
+    throw new Error('Failed to fetch movies');
   }
 
   console.log(resData);
@@ -63,11 +63,22 @@ export async function fetchingMovies(
   return resData;
 }
 
+export async function fetchingByTitle(title, lang = 'pl-PL', adult = false) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=${adult}&language=${lang}&page=1`,
+    options
+  );
+
+  const resData = await response.json();
+
+  return resData;
+}
+
 export async function fetchingMovie(
   id,
-  lang = "pl",
-  region = "pl-PL",
-  country = "PL"
+  lang = 'pl',
+  region = 'pl-PL',
+  country = 'PL'
 ) {
   const movie = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
@@ -97,7 +108,7 @@ export async function fetchingMovie(
   console.log(releasesData);
 
   let filteredReleases;
-  let certification = [{ certification: "NA" }];
+  let certification = [{ certification: 'NA' }];
 
   if (releasesData.results.length) {
     filteredReleases = releasesData.results.filter(
@@ -106,13 +117,13 @@ export async function fetchingMovie(
 
     if (filteredReleases.length) {
       const filteredCertification = filteredReleases[0].release_dates.filter(
-        (release) => release.certification !== ""
+        (release) => release.certification !== ''
       );
 
       if (filteredCertification.length) {
         certification = filteredCertification;
       }
-      console.log("certification", certification);
+      console.log('certification', certification);
     }
   }
 
@@ -130,7 +141,7 @@ export async function fetchingMovie(
   return resData;
 }
 
-export async function fetchingGenres(lang = "pl-PL") {
+export async function fetchingGenres(lang = 'pl-PL') {
   const response = await fetch(
     `https://api.themoviedb.org/3/genre/movie/list?language=${lang}`,
     options

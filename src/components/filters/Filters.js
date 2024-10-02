@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Filter from "./Filter";
-import classes from "./Filters.module.css";
+import { useState } from 'react';
+import Filter from './Filter';
+import classes from './Filters.module.css';
 
 function Filters(props) {
   const [active, setActive] = useState(false);
@@ -31,7 +31,13 @@ function Filters(props) {
           onClear={props.onClear}
           title="Categories"
         />
-        <Filter byTitle title="Find By Title" />
+        <Filter
+          byTitle
+          title="Find By Title"
+          onTitleQuery={props.onTitleQuery}
+          onClear={props.onTitleClear}
+          titleQuery={props.titleQuery}
+        />
       </div>
     </section>
   );

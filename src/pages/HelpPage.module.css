@@ -14,7 +14,7 @@
   margin-inline: auto;
   padding: 2rem;
   width: min(70vw, 1180px);
-  min-height: 300px;
+  min-height: 250px;
   height: 18vw;
   background-color: rgba(255, 255, 255, 0.047);
   border-radius: 2.5rem;
@@ -30,9 +30,10 @@
 .content {
   padding: 2rem;
   margin-left: 2rem;
+  height: 100%;
   width: 100%;
   border-radius: 1.2rem;
-  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.171);
+  box-shadow: inset 0px 0.3rem 0.4rem 0px rgba(0, 0, 0, 0.171);
   background-color: rgba(0, 0, 0, 0.082);
   overflow-y: scroll;
 }
@@ -54,7 +55,7 @@
   color: var(--main-text-color);
   background: none;
   border: none;
-  border-radius: 11px;
+  border-radius: 1.1rem;
   cursor: pointer;
 }
 
