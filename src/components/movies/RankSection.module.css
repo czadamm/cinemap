@@ -13,4 +13,5 @@
 .rank {
   padding-block: 1rem 2rem;
   border-radius: 0.6rem;
+  overflow-x: scroll;
 }

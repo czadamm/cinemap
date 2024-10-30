@@ -189,5 +189,6 @@
   flex-wrap: wrap;
   list-style: none;
   gap: 1rem;
-  overflow: hidden;
+  row-gap: 4rem;
+  overflow-y: scroll;
 }

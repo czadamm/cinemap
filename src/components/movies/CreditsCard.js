@@ -1,4 +1,4 @@
-import classes from "./CreditsCrad.module.css";
+import classes from './CreditsCard.module.css';
 
 const CreditsCard = ({ image, name, character, position }) => {
   return (
