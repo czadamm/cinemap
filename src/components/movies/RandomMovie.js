@@ -64,7 +64,7 @@ function RandomMovie() {
               src={`https://image.tmdb.org/t/p/original${randomMovie.data.backdrop_path}`}
               alt={randomMovie.data.title}
             />
-            <h1>Movie of the moment</h1>
+            <h1>Movie of the day</h1>
             <div className={classes.section_title}>
               <div className={classes.movie_title_container}>
                 <h2>{randomMovie.data.title}</h2>

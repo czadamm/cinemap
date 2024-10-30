@@ -22,6 +22,7 @@ function Movies({
 
   useEffect(() => {
     async function fetchMovies() {
+      setError('');
       setIsFetching(true);
 
       let fetchedResult = null;
@@ -118,6 +119,7 @@ function Movies({
           Sorry, we couldn't find movies with selected criteria.
         </p>
       )}
+      {error && <p className={classes.error}>{error?.message}</p>}
     </section>
   );
 }

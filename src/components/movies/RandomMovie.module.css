@@ -118,8 +118,8 @@
   transform: rotate(-45deg);
 }
 
-.button:hover {
-  background-color: rgba(0, 0, 0, 0.192);
+.button.more:hover {
+  color: var(--accent-color-green);
 }
 
 .button.fav:hover {

@@ -29,3 +29,16 @@
 .padded_top {
   padding-top: 23rem;
 }
+
+.error {
+  z-index: 999;
+  position: fixed;
+  bottom: 3rem;
+  left: var(--main-padding);
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-size: 2rem;
+  color: var(--main-text-color);
+  background-color: var(--accent-color-red);
+  border-radius: 0.8rem;
+}
