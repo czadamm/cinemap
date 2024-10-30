@@ -7,11 +7,10 @@
 
 .filters_section h2 {
   font-size: 3.1rem;
+  font-weight: 100;
   text-align: left;
   text-transform: uppercase;
-  color: rgba(34, 48, 59, 0.384);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
+  color: var(--main-text-color);
 }
 
 .toggle {
@@ -23,7 +22,7 @@
 
 .toggle::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 1.8rem;
   right: 0px;
   width: 0;

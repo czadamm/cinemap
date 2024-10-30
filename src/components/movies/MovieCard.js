@@ -5,7 +5,9 @@ function Movie({ id, image, title, year, rate, upcoming }) {
   return (
     <li className={classes.movie_card}>
       <Link to={'/movie/' + id + '/details'} className={classes.movie}>
-        <img src={image} alt={title} />
+        <div className={classes.imageContainer}>
+          <img src={image} alt={title} />
+        </div>
         <div className={classes.movie_info}>
           {!upcoming && (
             <p className={classes.rating}>

@@ -36,7 +36,7 @@ export async function fetchingMovies(
         options
       );
 
-      console.log('upcoming');
+      // console.log('upcoming');
     } else {
       response = await fetch(
         `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${lang}&page=${page}&sort_by=vote_average.desc&vote_count.gte=${min_votes}&watch_region=${region}&with_watch_providers=${provider}`,
@@ -58,7 +58,7 @@ export async function fetchingMovies(
     throw new Error('Failed to fetch movies');
   }
 
-  console.log(resData);
+  // console.log(resData);
 
   return resData;
 }
@@ -105,7 +105,7 @@ export async function fetchingMovie(
   const imagesData = await images.json();
   const releasesData = await releases.json();
 
-  console.log(releasesData);
+  // console.log(releasesData);
 
   let filteredReleases;
   let certification = [{ certification: 'NA' }];
@@ -123,11 +123,11 @@ export async function fetchingMovie(
       if (filteredCertification.length) {
         certification = filteredCertification;
       }
-      console.log('certification', certification);
+      // console.log('certification', certification);
     }
   }
 
-  console.log(certification);
+  // console.log(certification);
 
   const resData = {
     data: movieData,
@@ -136,7 +136,7 @@ export async function fetchingMovie(
     certification: certification[0].certification,
   };
 
-  console.log(resData);
+  // console.log(resData);
 
   return resData;
 }

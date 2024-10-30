@@ -52,6 +52,11 @@
   font-size: 1.5rem;
 }
 
+.imageContainer {
+  overflow: hidden;
+  border-radius: 1.1rem;
+}
+
 .movie:hover > .movie_info {
   opacity: 1;
   outline: 1px solid var(--main-text-color);

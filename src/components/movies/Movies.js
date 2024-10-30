@@ -12,6 +12,7 @@ function Movies({
   region,
   cinema,
   upcoming,
+  adult,
   min_votes,
   horizontal,
 }) {
@@ -48,6 +49,7 @@ function Movies({
             region,
             cinema,
             upcoming,
+            adult,
             min_votes
           );
           const movies = fetchedResult.results;
@@ -67,6 +69,7 @@ function Movies({
     fetchMovies();
   }, [
     activeCategories,
+    adult,
     cinema,
     lang,
     min_votes,
