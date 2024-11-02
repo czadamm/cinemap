@@ -1,6 +1,6 @@
 .content_wrapper {
   display: flex;
-  max-width: 1180px;
+  max-width: 1400px;
   margin-inline: auto;
   margin-top: 20rem;
   padding-inline: var(--main-padding);
