@@ -21,11 +21,11 @@
   color: var(--main-text-color);
 }
 
-@media screen and ((min-width: 1000px)) {
+/* @media screen and ((min-width: 1000px)) {
   :root {
     font-size: 7px;
   }
-}
+} */
 
 body {
   background-color: var(--background-color);
