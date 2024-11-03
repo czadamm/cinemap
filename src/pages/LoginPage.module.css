@@ -1,6 +1,7 @@
 .content_wrapper {
   display: flex;
   max-width: 1400px;
+  min-height: 100%;
   margin-inline: auto;
   margin-top: 20rem;
   padding-inline: var(--main-padding);
@@ -13,14 +14,15 @@
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  height: 30vw;
+  height: 35vw;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1000px;
+  background-color: rgba(255, 255, 255, 0.047);
+  border-radius: 2.5rem;
 }
 
 .sign_up {
-  padding-left: 0;
-  padding-right: 20rem;
+  padding-inline: 12.5rem;
   left: 0;
   z-index: 2;
 }
@@ -31,8 +33,7 @@
 }
 
 .sign_in {
-  padding-left: 20rem;
-  padding-right: 0;
+  padding-inline: 12.5rem;
   left: 0;
   opacity: 0;
   z-index: 1;
@@ -80,13 +81,13 @@
   height: 100%;
   overflow: hidden;
   transition: all 0.6s ease-in-out;
-  border-radius: 360px 11px 11px 360px;
+  border-radius: 36rem 1.1rem 1.1rem 36rem;
   z-index: 99;
 }
 
 .container.active .toggle_container {
   transform: translateX(-100%);
-  border-radius: 11px 360px 360px 11px;
+  border-radius: 1.1rem 36rem 36rem 1.1rem;
 }
 
 .form_container {

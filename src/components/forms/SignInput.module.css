@@ -7,14 +7,13 @@
 .input {
   height: 5.5rem;
   width: 100%;
-  max-width: 500px;
   padding-inline: 3rem;
   font-size: 1.8rem;
   font-weight: 200;
   color: var(--main-text-color);
   background: rgba(12, 12, 12, 0.14);
-  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 0.171),
-    inset 0px -2px 4px 0px rgba(78, 78, 78, 0.123);
+  box-shadow: inset 0px 0.3rem 0.4rem 0px rgba(0, 0, 0, 0.171),
+    inset 0px -0.2rem 0.4rem 0px rgba(78, 78, 78, 0.123);
   border-radius: 0.7rem;
   border: none;
   font-family: 'Noto Sans', sans-serif;
