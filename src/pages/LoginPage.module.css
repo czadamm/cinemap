@@ -1,10 +1,9 @@
 .content_wrapper {
   display: flex;
-  max-width: 1400px;
+  width: min(70vw, 1180px);
   min-height: 100%;
   margin-inline: auto;
   margin-top: 20rem;
-  padding-inline: var(--main-padding);
   justify-content: center;
   align-items: center;
 }
@@ -16,7 +15,6 @@
   justify-content: space-between;
   height: 35vw;
   width: 100%;
-  max-width: 1000px;
   background-color: rgba(255, 255, 255, 0.047);
   border-radius: 2.5rem;
 }
