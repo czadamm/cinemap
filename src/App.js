@@ -20,8 +20,7 @@ const router = createBrowserRouter([
       { path: 'library', element: <LibraryPage /> },
       { path: 'upcoming', element: <UpcomingPage /> },
       { path: 'help', element: <HelpPage /> },
-      { path: 'sign-in', element: <LoginPage active={true} /> },
-      { path: 'sign-up', element: <LoginPage active={false} /> },
+      { path: 'auth', element: <LoginPage /> },
       {
         path: 'movie',
         children: [{ path: ':id/details', element: <MovieDetails /> }],

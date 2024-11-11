@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
-import classes from "./Header.module.css";
-import logoLight from "../../assets/logo-light.svg";
-import UserButton from "../user/UserButton";
+import classes from './Header.module.css';
+import logoLight from '../../assets/logo-light.svg';
+import UserButton from '../user/UserButton';
 
 function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
@@ -12,7 +12,7 @@ function Header() {
   const userMenuRef = useRef(null);
   const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 20) {
       setIsPageScrolled(true);
       setIsUserMenuVisible(false);
@@ -34,9 +34,9 @@ function Header() {
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, []);
   // -------------------------------------------------------------------
@@ -64,7 +64,7 @@ function Header() {
               <UserButton name="Adam" toggleFn={toggleUserMenu} />
             </li>
             <li>
-              <Link to="sign-in" className={classes.button}>
+              <Link to="auth?mode=login" className={classes.button}>
                 Sign-in
               </Link>
             </li>

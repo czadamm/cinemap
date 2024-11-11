@@ -1,16 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import classes from './LoginPage.module.css';
-import { useState } from 'react';
 import BgWrapper from '../components/layout/BgWrapper';
 import RegisterForm from '../components/forms/RegisterForm';
 import LoginForm from '../components/forms/LoginForm';
 
-const LoginPage = ({ active }) => {
-  const [activeMode, setActiveMode] = useState(active);
-
-  const toggle = () => {
-    setActiveMode((prevState) => !prevState);
-  };
+const LoginPage = () => {
+  const [searchParams] = useSearchParams();
+  const activeMode = searchParams.get('mode') === 'login';
 
   return (
     <>
@@ -32,7 +28,7 @@ const LoginPage = ({ active }) => {
                 </h1>
                 <p>
                   No Account yet?
-                  <Link onClick={toggle} className={classes.red} to="/sign-up">
+                  <Link className={classes.red} to="?mode=signup">
                     Create it for free
                   </Link>
                 </p>
@@ -45,7 +41,7 @@ const LoginPage = ({ active }) => {
                   place
                 </h1>
                 <p>
-                  <Link onClick={toggle} className={classes.blue} to="/sign-in">
+                  <Link className={classes.blue} to="?mode=login">
                     Sign-in
                   </Link>
                   if You already have an account.
