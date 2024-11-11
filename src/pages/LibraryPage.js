@@ -13,10 +13,13 @@ function LibraryPage() {
     JSON.parse(localStorage.getItem('categories')) || []
   );
   const [titleQuery, setTitleQuery] = useState(null);
+  const [page, setPage] = useState(1);
   const lastTitleChange = useRef();
+  const content = useRef();
 
   const toggleCategories = (category) => {
     clearTitleQuery();
+    setPage(1);
     const updatedCategories = [...activeCategories];
 
     if (!updatedCategories.includes(category)) {
@@ -31,11 +34,13 @@ function LibraryPage() {
 
   const clearCategories = () => {
     setActiveCategories([]);
+    setPage(1);
     localStorage.removeItem('categories');
   };
 
   const clearTitleQuery = () => {
     setTitleQuery(null);
+    setPage(1);
   };
 
   const handleQueryTitle = (query) => {
@@ -51,10 +56,37 @@ function LibraryPage() {
     }, 500);
   };
 
+  const handleShowMoreMovies = () => {
+    setPage((currentPage) => currentPage + 1);
+  };
+
+  const handleScroll = () => {
+    if (
+      document.body.scrollHeight - 300 <
+      window.scrollY + window.innerHeight
+    ) {
+      handleShowMoreMovies();
+    }
+  };
+
+  function debounce(fn, delay) {
+    let timeoutId;
+    return function (...args) {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        fn(...args);
+      }, delay);
+    };
+  }
+
+  window.addEventListener('scroll', debounce(handleScroll, 500));
+
   return (
     <>
       <BgWrapper />
-      <div className={classes.content_wrapper}>
+      <div ref={content} className={classes.content_wrapper}>
         <div className={classes.section_title}>
           <Title>Library</Title>
           <Filters
@@ -70,7 +102,11 @@ function LibraryPage() {
           titleQuery={titleQuery}
           activeCategories={activeCategories}
           lang={LANGUAGES.us.lang}
+          page={page}
         />
+        <button type="button" onClick={handleShowMoreMovies}>
+          More
+        </button>
       </div>
     </>
   );

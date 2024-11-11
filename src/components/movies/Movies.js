@@ -15,13 +15,14 @@ function Movies({
   adult,
   min_votes,
   horizontal,
+  page,
 }) {
   const [isFetching, setIsFetching] = useState(false);
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState();
 
   useEffect(() => {
-    async function fetchMovies() {
+    async function fetchMovies(page) {
       setError('');
       setIsFetching(true);
 
@@ -51,11 +52,18 @@ function Movies({
             cinema,
             upcoming,
             adult,
-            min_votes
+            min_votes,
+            page
           );
-          const movies = fetchedResult.results;
+          const fetchedMovies = fetchedResult.results;
 
-          setMovies(movies);
+          if (page > 1) {
+            const currentMovies = [...movies];
+            const updatedMovies = [...currentMovies, ...fetchedMovies];
+            setMovies(updatedMovies);
+          } else {
+            setMovies(fetchedMovies);
+          }
           setIsFetching(false);
         } catch (error) {
           setError({
@@ -67,13 +75,15 @@ function Movies({
       }
     }
 
-    fetchMovies();
+    fetchMovies(page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     activeCategories,
     adult,
     cinema,
     lang,
     min_votes,
+    page,
     provider,
     region,
     titleQuery,
