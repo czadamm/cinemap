@@ -20,11 +20,6 @@
 }
 
 @-webkit-keyframes show_bg {
-  from {
-    height: 15rem;
-    background: rgba(33, 46, 56, 0);
-  }
-
   to {
     height: 10rem;
     background: rgba(33, 46, 56, 0.521);
@@ -32,11 +27,6 @@
 }
 
 @keyframes show_bg {
-  from {
-    height: 15rem;
-    background: rgba(33, 46, 56, 0);
-  }
-
   to {
     height: 10rem;
     background: rgba(33, 46, 56, 0.521);
