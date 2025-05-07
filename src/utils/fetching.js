@@ -1,4 +1,4 @@
-const authKey = process.env.TMDB_API_KEY;
+const authKey = process.env.REACT_APP_TMDB_API_KEY;
 
 const options = {
   method: 'GET',
