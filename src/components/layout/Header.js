@@ -5,12 +5,17 @@ import { useMotionValueEvent, useScroll } from 'framer-motion';
 import classes from './Header.module.css';
 import logoLight from '../../assets/logo-light.svg';
 import UserButton from '../user/UserButton';
+import {usePreferences} from "../../context/PreferencesContext";
+import {useTranslation} from "react-i18next";
+import LangMenu from "./LangMenu";
 
 function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
+  const {setGlobalLanguage} = usePreferences();
   const userMenuRef = useRef(null);
   const { scrollY } = useScroll();
+  const { t } = useTranslation();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 20) {
@@ -26,7 +31,6 @@ function Header() {
   };
 
   // hide user menu by click outside of it -----------------------------
-
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (!userMenuRef.current?.contains(e.target)) {
@@ -52,20 +56,23 @@ function Header() {
         <nav className={classes.nav_top}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">{t("menuHome")}</Link>
             </li>
             <li>
-              <Link to="library">Library</Link>
+              <Link to="library">{t("menuLibrary")}</Link>
             </li>
             <li>
-              <Link to="upcoming">Upcoming</Link>
+              <Link to="upcoming">{t("menuUpcoming")}</Link>
+            </li>
+            <li>
+              <LangMenu />
             </li>
             <li>
               <UserButton name="Adam" toggleFn={toggleUserMenu} />
             </li>
             <li>
               <Link to="auth?mode=login" className={classes.button}>
-                Sign-in
+                {t("menuSignIn")}
               </Link>
             </li>
           </ul>
@@ -74,27 +81,27 @@ function Header() {
               <ul>
                 <li>
                   <Link to="/user/my-account" onClick={toggleUserMenu}>
-                    Account
+                    {t("menuAccount")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/user/favourites" onClick={toggleUserMenu}>
-                    My Movies
+                    {t("menuFavourites")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/user/settings" onClick={toggleUserMenu}>
-                    Settings
+                    {t("menuSettings")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/help" onClick={toggleUserMenu}>
-                    Help
+                    {t("menuHelp")}
                   </Link>
                 </li>
                 <li className={classes.logout_btn}>
                   <Link to="/user/logout" onClick={toggleUserMenu}>
-                    Logout
+                    {t("menuLogout")}
                     <span>
                       <i class="fa-solid fa-door-open"></i>
                     </span>

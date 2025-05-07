@@ -7,19 +7,26 @@ import defaultImage from "../assets/person-default.png";
 import classes from "./MovieDetails.module.css";
 import CreditsCard from "../components/movies/CreditsCard";
 import BgWrapper from "../components/layout/BgWrapper";
+import {usePreferences} from "../context/PreferencesContext";
 
 function MovieDetails() {
   const params = useParams();
   const [isFetching, setIsFetching] = useState(false);
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState();
+  const { preferences } = usePreferences();
 
   useEffect(() => {
     async function fetchMovie() {
       setIsFetching(true);
 
       try {
-        const fetchedMovie = await fetchingMovie(params.id);
+        const fetchedMovie = await fetchingMovie(
+          params.id,
+          preferences.language,
+          preferences.locale,
+          preferences.country
+        );
 
         setMovie(fetchedMovie);
         setIsFetching(false);
@@ -33,7 +40,7 @@ function MovieDetails() {
     }
 
     fetchMovie();
-  }, [params.id]);
+  }, [params.id, preferences.language]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;

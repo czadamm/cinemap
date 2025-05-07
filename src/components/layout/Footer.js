@@ -1,8 +1,11 @@
 import classes from "./Footer.module.css";
 import logo from "../../assets/tmdb-full.svg";
 import { Link } from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className={classes.footer}>
       <div className={classes.copyrights}>
@@ -18,16 +21,16 @@ function Footer() {
       </div>
       <ul className={classes.navigation}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">{t("menuHome")}</Link>
         </li>
         <li>
-          <Link to="/library">Library</Link>
+          <Link to="/library">{t("menuLibrary")}</Link>
         </li>
         <li>
-          <Link to="/upcoming">Upcoming</Link>
+          <Link to="/upcoming">{t("menuUpcoming")}</Link>
         </li>
         <li>
-          <Link to="/help">Help</Link>
+          <Link to="/help">{t("menuHelp")}</Link>
         </li>
         <li>
           <Link to="/cookies">Cookies</Link>

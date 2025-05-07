@@ -10,6 +10,7 @@ import AccountPage from './pages/user/AccountPage';
 import MyMoviesPage from './pages/user/MyMoviesPage';
 import SettingsPage from './pages/user/SettingsPage';
 import HelpPage from './pages/HelpPage';
+import {PreferencesProvider} from "./context/PreferencesContext";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <PreferencesProvider>
+      <RouterProvider router={router} />
+    </PreferencesProvider>
+  );
 }
 
 export default App;

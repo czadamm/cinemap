@@ -3,16 +3,18 @@ import BgWrapper from "../../components/layout/BgWrapper";
 import Title from "../../components/layout/Title";
 import classes from "./SettingsPage.module.css";
 import SettingsSelect from "../../components/forms/SettingsSelect";
+import {useTranslation} from "react-i18next";
 
 const SettingsPage = () => {
   const [activeContent, setActiveContent] = useState("interface");
+  const { t } = useTranslation();
 
   return (
     <>
       <BgWrapper />
       <div className={classes.content_wrapper}>
         <div className={classes.section_title}>
-          <Title>Settings</Title>
+          <Title>{t("settingsTitle")}</Title>
         </div>
         <div className={classes.settings_window}>
           <div className={classes.menu}>
@@ -24,7 +26,7 @@ const SettingsPage = () => {
                   }
                   onClick={() => setActiveContent("interface")}
                 >
-                  Interface
+                  {t("settingsInterface")}
                 </button>
               </li>
               <li>
@@ -32,7 +34,7 @@ const SettingsPage = () => {
                   className={activeContent === "language" ? classes.active : ""}
                   onClick={() => setActiveContent("language")}
                 >
-                  Language
+                  {t("settingsLanguage")}
                 </button>
               </li>
               <li>
@@ -40,7 +42,7 @@ const SettingsPage = () => {
                   className={activeContent === "movies" ? classes.active : ""}
                   onClick={() => setActiveContent("movies")}
                 >
-                  Movies
+                  {t("settingsMovies")}
                 </button>
               </li>
             </ul>
@@ -58,7 +60,7 @@ const SettingsPage = () => {
               >
                 <SettingsSelect
                   id="theme"
-                  label="Theme"
+                  label={t("settingsInterfaceTheme")}
                   options={["one", "two"]}
                 />
               </div>
@@ -69,17 +71,17 @@ const SettingsPage = () => {
               >
                 <SettingsSelect
                   id="display_lang"
-                  label="Display language"
+                  label={t("settingsLanguageDisplay")}
                   options={["one", "two"]}
                 />
                 <SettingsSelect
                   id="country"
-                  label="Country"
+                  label={t("settingsLanguageCountry")}
                   options={["one", "two"]}
                 />
                 <SettingsSelect
                   id="timezone"
-                  label="Timezone"
+                  label={t("settingsLanguageTimezone")}
                   options={["one", "two"]}
                 />
               </div>
@@ -88,7 +90,11 @@ const SettingsPage = () => {
                   activeContent === "movies" ? classes.active : ""
                 }`}
               >
-                <SettingsSelect>Adult movies</SettingsSelect>
+                <SettingsSelect
+                  id="adult_enabled"
+                  label={t("settingsMoviesAdult")}
+                  options={["one", "two"]}
+                />
               </div>
             </form>
           </div>

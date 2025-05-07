@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classes from './Filter.module.css';
 import FilterItem from './FilterItem';
+import {useTranslation} from "react-i18next";
 
 function Filter({
   title,
@@ -12,6 +13,7 @@ function Filter({
   onTitleQuery,
 }) {
   const [titleQuery, setTitleQuery] = useState('');
+  const { t } = useTranslation();
 
   const handleTitleQueryChange = (e) => {
     setTitleQuery(e.target.value);
@@ -55,7 +57,7 @@ function Filter({
         <div className={classes.movie_title}>
           <input
             type="text"
-            placeholder="Enter movie title"
+            placeholder={t("filtersFindByTitlePlaceholder")}
             onChange={handleTitleQueryChange}
             value={titleQuery}
           />

@@ -5,10 +5,12 @@ import classes from "./AccountPage.module.css";
 import { useRef, useState } from "react";
 import EditActions from "../../components/forms/EditActions";
 import ProfileInput from "../../components/forms/ProfileInput";
+import {useTranslation} from "react-i18next";
 
 const AccountPage = () => {
   const filePickerRef = useRef();
   const [isInEdit, setIsInEdit] = useState(false);
+  const { t } = useTranslation();
 
   const toggleFormEditMode = () => {
     setIsInEdit(!isInEdit);
@@ -23,7 +25,7 @@ const AccountPage = () => {
       <BgWrapper />
       <div className={classes.content_wrapper}>
         <div className={classes.section_title}>
-          <Title>My account</Title>
+          <Title>{t("accountTitle")}</Title>
         </div>
         <div className={classes.profile}>
           <div className={classes.left_side}>
@@ -33,7 +35,7 @@ const AccountPage = () => {
                   onClick={handleChangeAvatar}
                   className={classes.avatar_change_button}
                 >
-                  Change Avatar
+                  {t("accountEditAvatar")}
                 </button>
               )}
               <UserAvatar />
@@ -53,28 +55,28 @@ const AccountPage = () => {
                   value="Default name"
                   inEdit={isInEdit}
                 >
-                  Email
+                  {t("accountEmail")}
                 </ProfileInput>
                 <ProfileInput
                   type="password"
                   value="Default name"
                   inEdit={isInEdit}
                 >
-                  Password
+                  {t("accountPassword")}
                 </ProfileInput>
                 <ProfileInput
                   type="text"
                   value="Default name"
                   inEdit={isInEdit}
                 >
-                  Name
+                  {t("accountName")}
                 </ProfileInput>
                 <ProfileInput
                   type="text"
                   value="Default name"
                   inEdit={isInEdit}
                 >
-                  Date of birth
+                  {t("accountBirthDate")}
                 </ProfileInput>
                 <EditActions isInEdit={isInEdit} editFn={toggleFormEditMode} />
               </form>

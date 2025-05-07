@@ -1,36 +1,41 @@
 import RandomMovie from "../components/movies/RandomMovie";
 import RankSection from "../components/movies/RankSection";
-import { PROVIDERS, LANGUAGES } from "../utils/tmdb";
+import { PROVIDERS } from "../utils/tmdb";
+import {usePreferences} from "../context/PreferencesContext";
+import {useTranslation} from "react-i18next";
 
 function HomePage() {
+  const { preferences } = usePreferences();
+  const { t } = useTranslation();
+
   return (
     <>
       <RandomMovie />
       <RankSection
-        title="Popular in theaters"
-        lang={LANGUAGES.us.lang}
-        region={LANGUAGES.us.region}
+        title={t("rankTheaters")}
+        lang={preferences.locale}
+        region={preferences.country}
         cinema={true}
       />
       <RankSection
-        title="Best on Netflix"
-        lang={LANGUAGES.us.lang}
+        title={t("rankNetflix")}
+        lang={preferences.locale}
         provider={PROVIDERS.netflix}
-        region={LANGUAGES.us.region}
+        region={preferences.country}
         min_votes={10000}
       />
       <RankSection
-        title="Best on Disney+"
-        lang={LANGUAGES.us.lang}
+        title={t("rankDisney")}
+        lang={preferences.locale}
         provider={PROVIDERS.disney}
-        region={LANGUAGES.us.region}
+        region={preferences.country}
         min_votes={10000}
       />
       <RankSection
-        title="Best on Amazon Prime"
-        lang={LANGUAGES.us.lang}
+        title={t("rankPrime")}
+        lang={preferences.locale}
         provider={PROVIDERS.amazon}
-        region={LANGUAGES.us.region}
+        region={preferences.country}
         min_votes={10000}
       />
     </>

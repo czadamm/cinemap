@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Filter from './Filter';
 import classes from './Filters.module.css';
+import {useTranslation} from "react-i18next";
 
 function Filters(props) {
   const [active, setActive] = useState(false);
+  const { t } = useTranslation();
 
   function toggleFilters() {
     setActive((currState) => !currState);
@@ -17,7 +19,7 @@ function Filters(props) {
           !active ? classes.toggle : `${classes.toggle} ${classes.active}`
         }
       >
-        Filters
+        {t("filtersTitle")}
       </h2>
       <div
         className={
@@ -29,11 +31,11 @@ function Filters(props) {
           activeCategories={props.activeCategories}
           onSelect={props.onUpdate}
           onClear={props.onClear}
-          title="Categories"
+          title={t("filtersCategories")}
         />
         <Filter
           byTitle
-          title="Find By Title"
+          title={t("filtersFindByTitle")}
           onTitleQuery={props.onTitleQuery}
           onClear={props.onTitleClear}
           titleQuery={props.titleQuery}

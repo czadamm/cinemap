@@ -3,24 +3,28 @@ import { useEffect, useState } from 'react';
 import { fetchingMovie, fetchingMovies } from '../../utils/fetching';
 import Spinner from '../layout/Spinner';
 import { useNavigate } from 'react-router';
+import { usePreferences } from "../../context/PreferencesContext";
+import {useTranslation} from "react-i18next";
 
 function RandomMovie() {
   const [randomMovie, setRandomMovie] = useState(null);
   // const [didRandomize, setDidRandomize] = useState(false);
   const [error, setError] = useState();
+  const { preferences } = usePreferences();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const randomizeMovie = async (page, index) => {
       try {
         const fetchedMovies = await fetchingMovies(
           [],
-          'pl-PL',
-          '',
-          'pl',
-          false,
-          false,
-          false,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
           5500,
           page
         );
@@ -29,10 +33,20 @@ function RandomMovie() {
         const randomMovieId = movies[index].id;
 
         console.log('randomId: ', randomMovieId);
+        console.log(preferences)
 
-        const fetchedMovie = await fetchingMovie(randomMovieId);
+        const fetchedMovie = await fetchingMovie(
+          randomMovieId,
+          preferences.language,
+          preferences.locale,
+          preferences.country
+        );
 
         setRandomMovie(fetchedMovie);
+
+        const randomizeDate = new Date().toDateString();
+        localStorage.setItem("lastCheckedAt", randomizeDate)
+        localStorage.setItem("randomMovieId", randomMovieId);
       } catch (error) {
         setError({
           message:
@@ -41,14 +55,29 @@ function RandomMovie() {
       }
     };
 
-    // page from 1 to 10 (of all movies in the db sorted by rating)
-    const page = Math.floor(Math.random() * 10 + 1);
-    // index from 0 to 19 (each page has 20 movies)
-    const index = Math.floor(Math.random() * 19);
+    const lastRandomizeDate = localStorage.getItem("lastCheckedAt");
+    const today = new Date().toDateString();
 
-    // random movie of 200 best movies
-    randomizeMovie(page, index);
-  }, []);
+    if (lastRandomizeDate !== today) {
+      // page from 1 to 10 (of all movies in the db sorted by rating)
+      const page = Math.floor(Math.random() * 10 + 1);
+      // index from 0 to 19 (each page has 20 movies)
+      const index = Math.floor(Math.random() * 19);
+
+      // random movie of 200 best movies
+      randomizeMovie(page, index);
+    } else {
+      const movieId = localStorage.getItem("randomMovieId");
+      fetchingMovie(
+        movieId,
+        preferences.language,
+        preferences.locale,
+        preferences.country
+      )
+        .then((movie) => setRandomMovie(movie))
+        .catch((error) => console.log(error));
+    }
+  }, [t]);
 
   const genres = [];
   randomMovie?.data.genres.map((genre) => genres.push(genre.name));
@@ -64,7 +93,7 @@ function RandomMovie() {
               src={`https://image.tmdb.org/t/p/original${randomMovie.data.backdrop_path}`}
               alt={randomMovie.data.title}
             />
-            <h1>Movie of the day</h1>
+            <h1>{t('heroTitle')}</h1>
             <div className={classes.section_title}>
               <div className={classes.movie_title_container}>
                 <h2>{randomMovie.data.title}</h2>

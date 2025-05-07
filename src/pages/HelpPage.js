@@ -4,16 +4,18 @@ import Title from '../components/layout/Title';
 import { useState } from 'react';
 import { TERMS_OF_USE } from '../utils/terms-of-use';
 import { PRIVACY_POLICY } from '../utils/privacy-policy';
+import {useTranslation} from "react-i18next";
 
 const HelpPage = () => {
   const [activeTopic, setActiveTopic] = useState('terms-of-use');
+  const { t } = useTranslation();
 
   return (
     <>
       <BgWrapper />
       <div className={classes.content_wrapper}>
         <div className={classes.section_title}>
-          <Title>Help</Title>
+          <Title>{t("helpTitle")}</Title>
         </div>
         <div className={classes.help_window}>
           <div className={classes.menu}>
@@ -25,7 +27,7 @@ const HelpPage = () => {
                   }
                   onClick={() => setActiveTopic('terms-of-use')}
                 >
-                  Terms of Use
+                  {t("helpTermsOfUse")}
                 </button>
               </li>
               <li>
@@ -35,7 +37,7 @@ const HelpPage = () => {
                   }
                   onClick={() => setActiveTopic('privacy-policy')}
                 >
-                  Privacy Policy
+                  {t("helpPrivacyPolicy")}
                 </button>
               </li>
               <li>
@@ -43,7 +45,7 @@ const HelpPage = () => {
                   className={activeTopic === 'database' ? classes.active : ''}
                   onClick={() => setActiveTopic('database')}
                 >
-                  Database
+                  {t("helpDatabase")}
                 </button>
               </li>
               <li>
@@ -51,7 +53,7 @@ const HelpPage = () => {
                   className={activeTopic === 'faq' ? classes.active : ''}
                   onClick={() => setActiveTopic('faq')}
                 >
-                  FAQ
+                  {t("helpFAQ")}
                 </button>
               </li>
             </ul>

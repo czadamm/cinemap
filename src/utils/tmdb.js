@@ -7,11 +7,11 @@ export const PROVIDERS = {
 };
 
 export const LANGUAGES = {
-  pl: { lang: "pl-PL", region: "PL" },
-  us: { lang: "en-US", region: "US" },
-  de: { lang: "de-DE", region: "DE" },
-  fr: { lang: "fr-FR", region: "FR" },
-  es: { lang: "es-ES", region: "ES" },
+  pl: { locale: "pl-PL", countryCode: "PL", language: 'pl' },
+  en: { locale: "en-US", countryCode: "US", language: 'en' },
+  de: { locale: "de-DE", countryCode: "DE", language: 'de' },
+  fr: { locale: "fr-FR", countryCode: "FR", language: 'fr' },
+  es: { locale: "es-ES", countryCode: "ES", language: 'es' },
 };
 
 export const CATEGORIES = [

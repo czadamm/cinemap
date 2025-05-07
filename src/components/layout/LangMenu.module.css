@@ -1,0 +1,52 @@
+.flagButton {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flagContainer {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.flagContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.languagesList {
+    position: absolute;
+    top: 4.5rem;
+    padding: 8px;
+    transform: translateX(calc(-50% + 10px));
+    background-color: var(--background-color);
+    -webkit-animation: show_menu 0.2s ease-in;
+    animation: show_menu 0.2s ease-in;
+}
+
+@-webkit-keyframes show_menu {
+    from {
+        top: 3.5rem;
+        opacity: 0;
+    }
+    to {
+        top: 4.5rem;
+        opacity: 1;
+    }
+}
+
+@keyframes show_menu {
+    from {
+        top: 3.5rem;
+        opacity: 0;
+    }
+    to {
+        top: 4.5rem;
+        opacity: 1;
+    }
+}

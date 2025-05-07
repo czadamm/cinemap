@@ -3,9 +3,11 @@ import classes from './LoginPage.module.css';
 import BgWrapper from '../components/layout/BgWrapper';
 import RegisterForm from '../components/forms/RegisterForm';
 import LoginForm from '../components/forms/LoginForm';
+import {useTranslation} from "react-i18next";
 
 const LoginPage = () => {
   const [searchParams] = useSearchParams();
+  const { t } = useTranslation();
   const activeMode = searchParams.get('mode') === 'login';
 
   return (
@@ -23,13 +25,12 @@ const LoginPage = () => {
             <div className={classes.toggle}>
               <div className={`${classes.toggle_panel} ${classes.toggle_left}`}>
                 <h1>
-                  Sign-in to Your Account and keep your favourite movies in one
-                  place
+                  {t("loginMessage")}
                 </h1>
                 <p>
-                  No Account yet?
+                  {t("loginToRegisterMessage")}
                   <Link className={classes.red} to="?mode=signup">
-                    Create it for free
+                    {t("loginToRegisterLink")}
                   </Link>
                 </p>
               </div>
@@ -37,14 +38,13 @@ const LoginPage = () => {
                 className={`${classes.toggle_panel} ${classes.toggle_right}`}
               >
                 <h1>
-                  Create a free Account and keep your favourite movies in one
-                  place
+                  {t("registerMessage")}
                 </h1>
                 <p>
                   <Link className={classes.blue} to="?mode=login">
-                    Sign-in
+                    {t("registerToLoginLink")}
                   </Link>
-                  if You already have an account.
+                  {t("registerToLoginMessage")}
                 </p>
               </div>
             </div>

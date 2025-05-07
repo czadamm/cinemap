@@ -1,21 +1,24 @@
 import { useRef, useState } from 'react';
 import Filters from '../components/filters/Filters';
 import Movies from '../components/movies/Movies';
-import { LANGUAGES } from '../utils/tmdb';
 import { CATEGORIES } from '../utils/tmdb';
 
 import classes from './LibraryPage.module.css';
 import Title from '../components/layout/Title';
 import BgWrapper from '../components/layout/BgWrapper';
+import {usePreferences} from "../context/PreferencesContext";
+import {useTranslation} from "react-i18next";
 
 function LibraryPage() {
   const [activeCategories, setActiveCategories] = useState(
     JSON.parse(localStorage.getItem('categories')) || []
   );
+  const {preferences} = usePreferences();
   const [titleQuery, setTitleQuery] = useState(null);
   const [page, setPage] = useState(1);
   const lastTitleChange = useRef();
   const content = useRef();
+  const { t } = useTranslation();
 
   const toggleCategories = (category) => {
     clearTitleQuery();
@@ -88,7 +91,7 @@ function LibraryPage() {
       <BgWrapper />
       <div ref={content} className={classes.content_wrapper}>
         <div className={classes.section_title}>
-          <Title>Library</Title>
+          <Title>{t("libraryTitle")}</Title>
           <Filters
             categories={CATEGORIES}
             activeCategories={activeCategories}
@@ -101,12 +104,9 @@ function LibraryPage() {
         <Movies
           titleQuery={titleQuery}
           activeCategories={activeCategories}
-          lang={LANGUAGES.us.lang}
+          lang={preferences.locale}
           page={page}
         />
-        <button type="button" onClick={handleShowMoreMovies}>
-          More
-        </button>
       </div>
     </>
   );
