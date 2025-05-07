@@ -68,9 +68,7 @@ export async function fetchingByTitle(title, lang = 'pl-PL', adult = false) {
     options
   );
 
-  const resData = await response.json();
-
-  return resData;
+  return await response.json();
 }
 
 export async function fetchingMovie(
@@ -128,16 +126,12 @@ export async function fetchingMovie(
 
   // console.log(certification);
 
-  const resData = {
+  return {
     data: movieData,
     credits: creditsData,
     images: imagesData,
     certification: certification[0].certification,
   };
-
-  // console.log(resData);
-
-  return resData;
 }
 
 export async function fetchingGenres(lang = 'pl-PL') {
@@ -146,7 +140,5 @@ export async function fetchingGenres(lang = 'pl-PL') {
     options
   );
 
-  const resData = await response.json();
-
-  return resData;
+  return await response.json();
 }
