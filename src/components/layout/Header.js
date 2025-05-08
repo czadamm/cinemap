@@ -5,7 +5,6 @@ import { useMotionValueEvent, useScroll } from 'framer-motion';
 import classes from './Header.module.css';
 import logoLight from '../../assets/logo-light.svg';
 import UserButton from '../user/UserButton';
-import {usePreferences} from "../../context/PreferencesContext";
 import {useTranslation} from "react-i18next";
 import LangMenu from "./LangMenu";
 
