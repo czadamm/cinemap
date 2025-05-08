@@ -1,4 +1,4 @@
-import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {usePreferences} from "../../context/PreferencesContext";
 import classes from './LangMenu.module.css';
 import plFlag from "../../assets/flags/pl.svg";
@@ -28,7 +28,7 @@ const LangMenu = () => {
 
     setCurrentLang({ language: preferences.language, flag: langFlag });
     setRestOfLangs(otherLangs);
-  }, [currentLang]);
+  }, [currentLang, preferences.language]);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {

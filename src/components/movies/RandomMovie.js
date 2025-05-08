@@ -77,7 +77,7 @@ function RandomMovie() {
         .then((movie) => setRandomMovie(movie))
         .catch((error) => console.log(error));
     }
-  }, [t]);
+  }, [t, preferences]);
 
   const genres = [];
   randomMovie?.data.genres.map((genre) => genres.push(genre.name));

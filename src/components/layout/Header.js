@@ -12,7 +12,6 @@ import LangMenu from "./LangMenu";
 function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
-  const {setGlobalLanguage} = usePreferences();
   const userMenuRef = useRef(null);
   const { scrollY } = useScroll();
   const { t } = useTranslation();

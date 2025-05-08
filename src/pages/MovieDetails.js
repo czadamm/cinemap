@@ -40,7 +40,7 @@ function MovieDetails() {
     }
 
     fetchMovie();
-  }, [params.id, preferences.language]);
+  }, [params.id, preferences.language, preferences.country, preferences.locale]);
 
   if (error) {
     // return <Error title="An error occured!" message={error.message} />;
