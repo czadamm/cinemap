@@ -25,6 +25,7 @@
     padding: 8px;
     transform: translateX(calc(-50% + 10px));
     background-color: var(--background-color);
+    box-shadow: 0.2rem 0.2rem 1rem 0.1rem rgba(0, 0, 0, 0.336);
     -webkit-animation: show_menu 0.2s ease-in;
     animation: show_menu 0.2s ease-in;
 }

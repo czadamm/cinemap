@@ -15,22 +15,6 @@
   background: rgba(33, 46, 56, 0.521);
   backdrop-filter: blur(19.6px);
   -webkit-backdrop-filter: blur(19.6px);
-  -webkit-animation: show_bg 0.5s ease;
-  animation: show_bg 0.5s ease;
-}
-
-@-webkit-keyframes show_bg {
-  to {
-    height: 10rem;
-    background: rgba(33, 46, 56, 0.521);
-  }
-}
-
-@keyframes show_bg {
-  to {
-    height: 10rem;
-    background: rgba(33, 46, 56, 0.521);
-  }
 }
 
 .nav_wrapper {
