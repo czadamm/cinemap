@@ -101,7 +101,7 @@ function Header() {
                   <Link to="/user/logout" onClick={toggleUserMenu}>
                     {t("menuLogout")}
                     <span>
-                      <i class="fa-solid fa-door-open"></i>
+                      <i className="fa-solid fa-door-open"></i>
                     </span>
                   </Link>
                 </li>
